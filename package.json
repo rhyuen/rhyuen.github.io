@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp watch",
     "dev": "gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.github.com/theduckening/theduckening.github.io/"
+    "url": "https://www.github.com/rhyuen/rhyuen.github.io/"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,8 @@
   "devDependencies": {
     "browser-sync": "2.13.0",
     "gulp": "3.9.1"
+  },
+  "dependencies": {
+    "nodemon": "1.9.2"
   }
 }
