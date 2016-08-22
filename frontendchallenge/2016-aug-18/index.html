@@ -1,0 +1,50 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Bootstrap with Data
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class = "panel panel-default">
+      <div class = "panel-heading">
+        File Viewer: 2014 City of Vancouver Staff Remuneration over 75K with Expenses
+      </div>
+    </div>
+    <div>
+      <table id = "main_data_content" class = "table table-striped">
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Compensation</th>
+          <th>Department</th>
+          <th>Expenses</th>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src = "lib/jquery-csv/src/jquery.csv.js"></script>
+  <script type = "text/javascript">
+    $(document).ready(function(){
+      $.get("dataset.csv", function(data){
+        var formattedData = $.csv.toObjects(data);
+        console.log(formattedData);
+        formattedData.map(function(currDataCell){
+          $("#main_data_content")
+            .append($("<tr/>")
+            .append($("<td/>", {text: currDataCell.Name}))
+            .append($("<td/>", {text: currDataCell.Title}))
+            .append($("<td/>", {text: currDataCell.Remuneration}))
+            .append($("<td/>", {text: currDataCell.Department}))
+            .append($("<td/>", {text: currDataCell.Expenses}))
+
+          );
+        });
+
+
+      });
+    });
+  </script>
+</html>
