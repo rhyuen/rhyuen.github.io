@@ -1,48 +1,132 @@
 <DOCTYPE html>
 <html>
   <head>
-    <title>
-      Bootstrap with Data
-    </title>
+    <title>2014 City of Vancouver Staff Remuneration over 75K with Expenses</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class = "panel panel-default">
-      <div class = "panel-heading">
-        File Viewer: 2014 City of Vancouver Staff Remuneration over 75K with Expenses
+
+    <div class = "container-fluid">
+      <div class = "row">
+        <div class = "col-md-2"></div>
+        <div class = "col-md-8">
+          <div class = "panel panel-default">
+            <div class = "panel-heading">
+              <h3 class = "panel-title">File Viewer: 2014 City of Vancouver Staff Remuneration over 75K with Expenses</h3>
+            </div>
+            <div class = "panel-body">
+
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Department <span class="caret"></span>
+                </button>
+                <ul id = "department_filter" class="dropdown-menu">
+                </ul>
+              </div>
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Compensation <span class="caret"></span>
+                </button>
+                <ul id = "sort" class="dropdown-menu">
+                  <li><a>Ascending</a></li>
+                  <li><a>Descending</a></li>
+                </ul>
+              </div>
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Expenses <span class="caret"></span>
+                </button>
+                <ul id = "sort" class="dropdown-menu">
+                  <li><a>Ascending</a></li>
+                  <li><a>Descending</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div>
+            <table id = "main_data_content" class = "table table-striped">
+              <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Compensation</th>
+                <th>Department</th>
+                <th>Expenses</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class = "col-md-2"></div>
       </div>
     </div>
-    <div>
-      <table id = "main_data_content" class = "table table-striped">
-        <tr>
-          <th>Name</th>
-          <th>Position</th>
-          <th>Compensation</th>
-          <th>Department</th>
-          <th>Expenses</th>
-        </tr>
-      </table>
-    </div>
   </body>
-  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
   <script src = "lib/jquery-csv/src/jquery.csv.js"></script>
   <script type = "text/javascript">
     $(document).ready(function(){
       $.get("dataset.csv", function(data){
         var formattedData = $.csv.toObjects(data);
         console.log(formattedData);
+
+        //GLOBAL
+        var departmentKeys = {};
+
+        function handleDepartmentStats(currCell){
+          if(departmentKeys[currCell.Department] === undefined){
+            departmentKeys[currCell.Department] = 1;
+          }else{
+            departmentKeys[currCell.Department]++;
+          }
+        }
+
+        function updateDepartmentFilter(){
+          for(key in departmentKeys){
+            $("#department_filter")
+              .append($("<li/>")
+              .append($("<a/>", {href : "#", text: key})));
+          }
+        }
+
         formattedData.map(function(currDataCell){
+          handleDepartmentStats(currDataCell);
           $("#main_data_content")
             .append($("<tr/>")
             .append($("<td/>", {text: currDataCell.Name}))
             .append($("<td/>", {text: currDataCell.Title}))
             .append($("<td/>", {text: currDataCell.Remuneration}))
             .append($("<td/>", {text: currDataCell.Department}))
-            .append($("<td/>", {text: currDataCell.Expenses}))
-
-          );
+            .append($("<td/>", {text: currDataCell.Expenses})));
         });
 
+        updateDepartmentFilter();
+
+        $("#department_filter > li > a").click(function(){
+          var currFilterValue = $(this).text();
+          console.log(currFilterValue);
+          $("#main_data_content").empty();
+          var filteredData = formattedData.filter(function(currDataCell){
+            return currDataCell.Department === currFilterValue;
+          });
+
+          filteredData.map(function(currFilteredCell){
+            $("#main_data_content")
+              .append($("<tr/>")
+              .append($("<td/>", {text: currFilteredCell.Name}))
+              .append($("<td/>", {text: currFilteredCell.Title}))
+              .append($("<td/>", {text: currFilteredCell.Remuneration}))
+              .append($("<td/>", {text: currFilteredCell.Department}))
+              .append($("<td/>", {text: currFilteredCell.Expenses})));
+          });
+        });
+
+
+
+        console.log(departmentKeys);
 
       });
     });
