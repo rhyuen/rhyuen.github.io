@@ -12,7 +12,7 @@
       <div class = "row">
         <div class = "col-md-2"></div>
         <div class = "col-md-8">
-          <div class = "panel panel-default">
+          <div class = "panel panel-default panel-info">
             <div class = "panel-heading">
               <h3 class = "panel-title">File Viewer: 2014 City of Vancouver Staff Remuneration over 75K with Expenses</h3>
             </div>
@@ -50,6 +50,25 @@
             </div>
           </div>
           <div>
+
+
+          <div class = "panel panel-default panel-primary" >
+            <div class = "panel-heading">
+              <h3 class = "panel-title">Summary of Data from 2014 City of Vancouver Staff Remuneration over 75K with Expenses</h3>
+            </div>
+            <div class = "panel-body">
+              <table id= "summary_data_content" class = "table table-striped">
+                <tr>
+                  <th>Department</th>
+                  <th>Number of Employees</th>
+                  <th>Total Remuneration</th>
+                  <th>Total Expenses</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class = "panel panel-default">
             <table id = "main_data_content" class = "table table-striped">
               <tr>
                 <th>Name</th>
@@ -67,68 +86,5 @@
   </body>
 
   <script src = "lib/jquery-csv/src/jquery.csv.js"></script>
-  <script type = "text/javascript">
-    $(document).ready(function(){
-      $.get("dataset.csv", function(data){
-        var formattedData = $.csv.toObjects(data);
-        console.log(formattedData);
-
-        //GLOBAL
-        var departmentKeys = {};
-
-        function handleDepartmentStats(currCell){
-          if(departmentKeys[currCell.Department] === undefined){
-            departmentKeys[currCell.Department] = 1;
-          }else{
-            departmentKeys[currCell.Department]++;
-          }
-        }
-
-        function updateDepartmentFilter(){
-          for(key in departmentKeys){
-            $("#department_filter")
-              .append($("<li/>")
-              .append($("<a/>", {href : "#", text: key})));
-          }
-        }
-
-        formattedData.map(function(currDataCell){
-          handleDepartmentStats(currDataCell);
-          $("#main_data_content")
-            .append($("<tr/>")
-            .append($("<td/>", {text: currDataCell.Name}))
-            .append($("<td/>", {text: currDataCell.Title}))
-            .append($("<td/>", {text: currDataCell.Remuneration}))
-            .append($("<td/>", {text: currDataCell.Department}))
-            .append($("<td/>", {text: currDataCell.Expenses})));
-        });
-
-        updateDepartmentFilter();
-
-        $("#department_filter > li > a").click(function(){
-          var currFilterValue = $(this).text();
-          console.log(currFilterValue);
-          $("#main_data_content").empty();
-          var filteredData = formattedData.filter(function(currDataCell){
-            return currDataCell.Department === currFilterValue;
-          });
-
-          filteredData.map(function(currFilteredCell){
-            $("#main_data_content")
-              .append($("<tr/>")
-              .append($("<td/>", {text: currFilteredCell.Name}))
-              .append($("<td/>", {text: currFilteredCell.Title}))
-              .append($("<td/>", {text: currFilteredCell.Remuneration}))
-              .append($("<td/>", {text: currFilteredCell.Department}))
-              .append($("<td/>", {text: currFilteredCell.Expenses})));
-          });
-        });
-
-
-
-        console.log(departmentKeys);
-
-      });
-    });
-  </script>
+  <script type = "text/javascript" src = "./index.js"></script>
 </html>
