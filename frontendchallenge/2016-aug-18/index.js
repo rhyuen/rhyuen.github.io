@@ -24,29 +24,28 @@ $(document).ready(function(){
     }
 
     function clearSummaryCompute(){
-      
+      aggDollarValues = {department: "Assorted", persons: 0.0, compensation: 0.0, expenses: 0.0};
+      $("#summary_data_content").find("tr:gt(0)").remove();
     }
 
     function handleSummaryCompute(currDataCell){
       aggDollarValues.persons++;
-      aggDollarValues.compensation += parseFloat(currDataCell.Remuneration);
-      aggDollarValues.expenses += parseFloat(currDataCell.Expenses);
+      //Math with commas doesn't work well it seems.
+      aggDollarValues.compensation += parseFloat(currDataCell.Remuneration.replace(/,/g , ""));
+      aggDollarValues.expenses += parseFloat(currDataCell.Expenses.replace(/,/g , ""));
     }
 
     function drawSummaryTable(){
-      //Add a Check to Clearout existing rows.
       $("#summary_data_content")
         .append($("<tr/>")
         .append($("<td/>", {text: aggDollarValues.department}))
         .append($("<td/>", {text: aggDollarValues.persons}))
-        .append($("<td/>", {text: aggDollarValues.compensation}))
-        .append($("<td/>", {text: aggDollarValues.expenses}))
+        .append($("<td/>", {text: Math.ceil(aggDollarValues.compensation)}))
+        .append($("<td/>", {text: Math.ceil(aggDollarValues.expenses)}))
       );
     }
 
-    formattedData.map(function(currDataCell){
-      handleDepartmentStats(currDataCell);
-      handleSummaryCompute(currDataCell);
+    function updateMainDataTable(currDataCell){
       $("#main_data_content")
         .append($("<tr/>")
         .append($("<td/>", {text: currDataCell.Name}))
@@ -54,6 +53,13 @@ $(document).ready(function(){
         .append($("<td/>", {text: currDataCell.Remuneration}))
         .append($("<td/>", {text: currDataCell.Department}))
         .append($("<td/>", {text: currDataCell.Expenses})));
+    }
+
+    //INITIAL LOAD
+    formattedData.map(function(currDataCell){
+      handleDepartmentStats(currDataCell);
+      handleSummaryCompute(currDataCell);
+      updateMainDataTable(currDataCell);
     });
     drawSummaryTable();
     updateDepartmentFilter();
@@ -63,24 +69,31 @@ $(document).ready(function(){
     $("#department_filter > li > a").click(function(){
       var currFilterValue = $(this).text();
       console.log(currFilterValue);
+
       $("#main_data_content").find("tr:gt(0)").remove();
+
+      clearSummaryCompute();
+
       var filteredData = formattedData.filter(function(currDataCell){
         return currDataCell.Department === currFilterValue;
       });
 
       filteredData.map(function(currFilteredCell){
-        $("#main_data_content")
-          .append($("<tr/>")
-          .append($("<td/>", {text: currFilteredCell.Name}))
-          .append($("<td/>", {text: currFilteredCell.Title}))
-          .append($("<td/>", {text: currFilteredCell.Remuneration}))
-          .append($("<td/>", {text: currFilteredCell.Department}))
-          .append($("<td/>", {text: currFilteredCell.Expenses})));
+        handleSummaryCompute(currFilteredCell);
+        updateMainDataTable(currFilteredCell);
       });
+
       drawSummaryTable();
     });
 
 
+    $("compensation_sort > li > a").click(function(){
+
+    });
+
+    $("expenses_sort > li > a").click(function(){
+      
+    });
 
     console.log(departmentKeys);
 
