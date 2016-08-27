@@ -4,7 +4,7 @@ $(document).ready(function(){
 
     //GLOBAL
     var departmentKeys = {};
-    var aggDollarValues = {department: "Assorted", persons: 0.0, compensation: 0.0, expenses: 0.0};
+    var aggDollarValues = {department: "All", persons: 0.0, compensation: 0.0, expenses: 0.0};
     var mainContentState = formattedData;
 
     function handleDepartmentStats(currCell){
@@ -40,6 +40,7 @@ $(document).ready(function(){
     }
 
     function drawSummaryTable(){
+
       $("#summary_data_content")
         .append($("<tr/>")
         .append($("<td/>", {text: aggDollarValues.department}))
@@ -47,6 +48,24 @@ $(document).ready(function(){
         .append($("<td/>", {text: Math.ceil(aggDollarValues.compensation)}))
         .append($("<td/>", {text: Math.ceil(aggDollarValues.expenses)}))
       );
+    }
+
+    //Something is incorrect here. String cannot be spliced
+    //SLICE
+    function insertCommasInNumbers(number){
+      var StringWithCommas = number.toString();
+      var numOfCommasToInsert = Math.floor(number.length / 3 );
+
+      if(StringWithCommas.length > 3){
+        for(var count = 0; count < numOfCommasToInsert; count++){
+          StringWithCommas = StringWithCommas.splice(1 + 4*count, 0, ",");
+          console.log(StringWithCommas);
+        }
+
+        return StringWithCommas;
+      }else{
+        return StringWithCommas;
+      }
     }
 
     function updateMainDataTable(currDataCell){
@@ -78,6 +97,7 @@ $(document).ready(function(){
       clearMainDataTable();
       clearSummaryCompute();
 
+      //USE ORIGINAL DATA INSTEAD OF STATE B/C VALUES CHANGE
       var filteredData = formattedData.filter(function(currDataCell){
         return currDataCell.Department === currFilterValue;
       });
@@ -87,6 +107,8 @@ $(document).ready(function(){
         updateMainDataTable(currFilteredCell);
       });
 
+      //UPDATE GLOBAL STATE WITH FILTERED DATA
+      mainContentState = filteredData;
       drawSummaryTable();
     });
     //DEPARTMENT FILTER END;
@@ -94,30 +116,21 @@ $(document).ready(function(){
 
     $("#compensation_sort > li > a").click(function(){
 
+      //DO A PARENT CHECK.
+      //$(this).parent().parent() === "some selector"
+
       var selectedOption = $(this).text();
-      if(selectedOption === "Descending"){
-        mainContentState.sort(function(firstItem, secondItem){
-          if(parseFloat(secondItem.Remuneration) > parseFloat(firstItem.Remuneration)){
-            return 1;
-          }
-          if(parseFloat(secondItem.Remuneration) < parseFloat(firstItem.Remuneration)){
-            return -1;
-          }
-          return 0;
-        });
-        console.log(mainContentState);
-      }else{
-        mainContentState.sort(function(firstItem, secondItem){
-          if(parseFloat(secondItem.Remuneration) > parseFloat(firstItem.Remuneration)){
-            return -1;
-          }
-          if(parseFloat(secondItem.Remuneration) < parseFloat(firstItem.Remuneration)){
-            return 1;
-          }
-          return 0;
-        });
-        console.log(mainContentState);
-      }
+      mainContentState.sort(function(firstItem, secondItem){
+        if(parseFloat(secondItem.Remuneration) > parseFloat(firstItem.Remuneration)){
+          return (selectedOption === "Descending") ? 1 : -1;
+        }
+        if(parseFloat(secondItem.Remuneration) < parseFloat(firstItem.Remuneration)){
+          return (selectedOption === "Descending") ? -1 : 1;
+        }
+        return 0;
+      });
+      console.log(mainContentState);
+
 
       clearMainDataTable();
       mainContentState.map(function(currStateCell){
@@ -128,8 +141,6 @@ $(document).ready(function(){
     $("#expenses_sort > li > a").click(function(){
 
     });
-
-    console.log(departmentKeys);
 
   });
 });
