@@ -1,11 +1,11 @@
 $(document).ready(function(){
   $.get("dataset.csv", function(data){
     var formattedData = $.csv.toObjects(data);
-    console.log(formattedData);
 
     //GLOBAL
     var departmentKeys = {};
     var aggDollarValues = {department: "Assorted", persons: 0.0, compensation: 0.0, expenses: 0.0};
+    var mainContentState = formattedData;
 
     function handleDepartmentStats(currCell){
       if(departmentKeys[currCell.Department] === undefined){
@@ -26,6 +26,10 @@ $(document).ready(function(){
     function clearSummaryCompute(){
       aggDollarValues = {department: "Assorted", persons: 0.0, compensation: 0.0, expenses: 0.0};
       $("#summary_data_content").find("tr:gt(0)").remove();
+    }
+
+    function clearMainDataTable(){
+      $("#main_data_content").find("tr:gt(0)").remove();
     }
 
     function handleSummaryCompute(currDataCell){
@@ -55,7 +59,7 @@ $(document).ready(function(){
         .append($("<td/>", {text: currDataCell.Expenses})));
     }
 
-    //INITIAL LOAD
+    //INITIAL LOAD BEGIN
     formattedData.map(function(currDataCell){
       handleDepartmentStats(currDataCell);
       handleSummaryCompute(currDataCell);
@@ -63,15 +67,15 @@ $(document).ready(function(){
     });
     drawSummaryTable();
     updateDepartmentFilter();
+    //INITIAL LOAD END
 
 
-    //REDRAW PAGE ON FILTER
+    //REDRAW PAGE ON  DEPARTMENT FILTER
     $("#department_filter > li > a").click(function(){
       var currFilterValue = $(this).text();
       console.log(currFilterValue);
 
-      $("#main_data_content").find("tr:gt(0)").remove();
-
+      clearMainDataTable();
       clearSummaryCompute();
 
       var filteredData = formattedData.filter(function(currDataCell){
@@ -85,14 +89,44 @@ $(document).ready(function(){
 
       drawSummaryTable();
     });
+    //DEPARTMENT FILTER END;
 
 
-    $("compensation_sort > li > a").click(function(){
+    $("#compensation_sort > li > a").click(function(){
 
+      var selectedOption = $(this).text();
+      if(selectedOption === "Descending"){
+        mainContentState.sort(function(firstItem, secondItem){
+          if(parseFloat(secondItem.Remuneration) > parseFloat(firstItem.Remuneration)){
+            return 1;
+          }
+          if(parseFloat(secondItem.Remuneration) < parseFloat(firstItem.Remuneration)){
+            return -1;
+          }
+          return 0;
+        });
+        console.log(mainContentState);
+      }else{
+        mainContentState.sort(function(firstItem, secondItem){
+          if(parseFloat(secondItem.Remuneration) > parseFloat(firstItem.Remuneration)){
+            return -1;
+          }
+          if(parseFloat(secondItem.Remuneration) < parseFloat(firstItem.Remuneration)){
+            return 1;
+          }
+          return 0;
+        });
+        console.log(mainContentState);
+      }
+
+      clearMainDataTable();
+      mainContentState.map(function(currStateCell){
+        updateMainDataTable(currStateCell);
+      });
     });
 
-    $("expenses_sort > li > a").click(function(){
-      
+    $("#expenses_sort > li > a").click(function(){
+
     });
 
     console.log(departmentKeys);
