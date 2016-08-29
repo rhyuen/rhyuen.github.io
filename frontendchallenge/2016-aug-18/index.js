@@ -40,7 +40,6 @@ $(document).ready(function(){
     }
 
     function drawSummaryTable(){
-
       $("#summary_data_content")
         .append($("<tr/>")
         .append($("<td/>", {text: aggDollarValues.department}))
@@ -68,6 +67,7 @@ $(document).ready(function(){
       }
     }
 
+    //Reinsert Commas before drawing main data table.
     function updateMainDataTable(currDataCell){
       $("#main_data_content")
         .append($("<tr/>")
@@ -109,38 +109,49 @@ $(document).ready(function(){
 
       //UPDATE GLOBAL STATE WITH FILTERED DATA
       mainContentState = filteredData;
+      aggDollarValues.department = currFilterValue;
       drawSummaryTable();
     });
     //DEPARTMENT FILTER END;
 
 
-    $("#compensation_sort > li > a").click(function(){
+    //Remove the Commas? I didn't remove the commas....
+    $("#compensation_sort > li > a, #expenses_sort > li > a").click(function(){
 
-      //DO A PARENT CHECK.
-      //$(this).parent().parent() === "some selector"
+      var filterProperty = ($(this).parent().parent().attr("id") === "compensation_sort")
+        ? "Remuneration"
+        : "Expenses";
 
       var selectedOption = $(this).text();
-      mainContentState.sort(function(firstItem, secondItem){
-        if(parseFloat(secondItem.Remuneration) > parseFloat(firstItem.Remuneration)){
+
+      var updatedContentState = mainContentState.map(function(item){
+        return {
+          Name: item.Name,
+          Department: item.Department,
+          Title: item.Title,
+          Remuneration: item.Remuneration.replace(/,/g , ""),
+          Expenses: item.Expenses = item.Expenses.replace(/,/g , "")
+        };
+      });
+
+      updatedContentState.sort(function(firstItem, secondItem){
+
+        if(parseFloat(secondItem[filterProperty]) > parseFloat(firstItem[filterProperty])){
           return (selectedOption === "Descending") ? 1 : -1;
         }
-        if(parseFloat(secondItem.Remuneration) < parseFloat(firstItem.Remuneration)){
+        if(parseFloat(secondItem[filterProperty]) < parseFloat(firstItem[filterProperty])){
           return (selectedOption === "Descending") ? -1 : 1;
         }
         return 0;
-      });
-      console.log(mainContentState);
 
+      });
 
       clearMainDataTable();
-      mainContentState.map(function(currStateCell){
+      updatedContentState.map(function(currStateCell){
         updateMainDataTable(currStateCell);
       });
+
+      mainContentState = updatedContentState;
     });
-
-    $("#expenses_sort > li > a").click(function(){
-
-    });
-
   });
 });
