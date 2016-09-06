@@ -3,12 +3,39 @@ $(document).ready(function(){
     var formattedData = $.csv.toObjects(data);
     var remunerationData = [];
     for(var i =0; i < formattedData.length; i++){
-      remunerationData.push(parseFloat(formattedData[i].Remuneration.replace(/,/g , ""))/10000);
+      remunerationData.push(parseFloat(formattedData[i].Remuneration.replace(/,/g , "")));
+    }
+
+
+    var salaryBuckets = {};
+    for(var bucket = 75; bucket < 300; bucket+=5){
+      salaryBuckets[bucket.toString()] = 0;
+    }
+
+    function determineSalaryBucket(salary){
+      for(var i = 300000; i > 75000; i-=5000){
+        if(salary > i){
+          var key = (i.toString().length === 6)
+            ? i.toString().substring(0,3)
+            : i.toString().substring(0,2);
+          salaryBuckets[key]++;
+          return;
+        }
+      }
+    }
+
+    for(var i = 0; i < remunerationData.length; i++){
+      determineSalaryBucket(remunerationData[i])
+    }
+
+    var grapharray = [];
+    for(var key in salaryBuckets){
+      grapharray.push(salaryBuckets[key]);
     }
 
     d3.select("#chart")
       .selectAll("div")
-      .data(remunerationData)
+      .data(grapharray)
       .enter()
       .append("div")
       .style("height", function(d){
@@ -21,7 +48,7 @@ $(document).ready(function(){
     );
 
     var heatremuneration = remunerationData.map(function(currItem){
-      return currItem/10;
+      return currItem/100000;
     });
 
     d3.select("#heatmap")
@@ -32,6 +59,8 @@ $(document).ready(function(){
       .style("background-color", function(d){
         return (d === 0) ? "#eee": colorMap(d);
       });
+
+
 
   });
 });
