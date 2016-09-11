@@ -1,0 +1,20 @@
+{
+  "name": "2016-sep-8",
+  "homepage": "https://github.com/rhyuen/rhyuen.github.io",
+  "authors": [
+    "Robert Yuen"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "typeahead.js": "^0.11.1",
+    "bootstrap": "^3.3.7"
+  }
+}

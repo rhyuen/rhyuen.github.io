@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap Typeahead Project Filler</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link rel = "stylesheet" href = "index.css" />
+  </head>
+  <body>
+    <div class = "site-wrapper">
+      <div class = "site-wrapper-inner">
+        <div class = "cover-container">
+
+
+          <div class = "inner cover">
+            <h1 class = "cover-heading">Typeahead, autocomplete for the web.</h1>
+            <p class = "lead">
+              Just another front end snippet of code to keep those skills sharp!
+            </p>
+            <p class = "lead">
+              <a href = "https://twitter.github.io/typeahead.js/" class = "btn btn-lg btn-default">Here's the Link</a>
+            </p>
+            <p class = "lead">
+              And here's the demo.
+            </p>
+            <p class = "lead">
+              <div>
+                <input id = "crux" class = "typeahead" type = "text" placeholder="Provinces of Canada." />
+              </div>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src = "bower_components/typeahead.js/dist/typeahead.jquery.js"></script>
+    <script src = "bower_components/typeahead.js/dist/bloodhound.js"></script>
+    <script type = "text/javascript">
+      $(document).ready(function(){
+
+        var substringMatcher = function(string){
+          return function findMatches(q, cb){
+            var matches = [];
+            var substringPattern = new RegExp(q, "i");
+
+            $.each(string, function(i, currChar){
+              if(substringPattern.test(currChar)){
+                matches.push(currChar);
+              }
+            });
+
+            cb(matches);
+          };
+        };
+
+        var provinces = [
+          "British Columba",
+          "Alberta",
+          "Saskatchewan",
+          "Manitoba", "Ontario",
+          "Quebec",
+          "Prince Edward Island",
+          "New Brunswick",
+          "Nova Scotia",
+          "Newfoundland"
+        ];
+
+        $(".typeahead").typeahead({
+          hint: true,
+          highlight: true,
+          minLength: 1
+        },{
+          name: "provinces",
+          source: substringMatcher(provinces)
+        });
+
+
+      });
+    </script>
+  </body>
+</html>
