@@ -1,0 +1,57 @@
+.slideshow-container{
+  min-height: 1000px;
+  max-width: 1000px;
+  position: relative;
+  margin:auto;
+  background-color: lavender;
+}
+
+.prev, .next{
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: gray;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.prev{
+  left: 0%;
+}
+
+.next{
+  right: 5%;
+  color: blue;
+}
+
+.dot{
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 3px;
+  background-color: red;
+  display: inline-block;
+}
+
+.dot-container{
+  position: absolute;
+  bottom: 0%;
+  right: 50%;
+}
+
+.slide{
+  position: relative;
+}
+
+.numbertext{
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.active{
+  background-color: purple;
+}
