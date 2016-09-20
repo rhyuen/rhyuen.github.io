@@ -3,6 +3,73 @@
   <head>
     <title>Highlight Text Sharing Menu</title>
     <style>
+
+      body{
+        width: 95%;
+        height: 100%;
+        background-color: lavender;
+        margin: 2.5%;
+        font-family: Verdana;
+        font-size: 14px;
+      }
+
+      .header{
+        display: relative;
+      }
+
+      .header-text{
+        display: inline-block;
+        width: 50%;
+      }
+
+      .navigation{
+        display: inline-block;
+        width: 40%;
+      }
+
+      ul{
+        list-style: none;
+      }
+      li{
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: pink;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px
+      }
+
+      .container{
+        padding: 2%;
+        border-radius: 2px;
+        background-color: grey;
+        height: 95%;
+      }
+
+      .posts{
+        background-color: white;
+        margin: 5px;
+        padding-left: 55px;
+        padding-right: 55px;
+        padding-top: 25px;
+        padding-bottom: 25px
+      }
+
+      .post-header{
+      }
+
+      .post-title{
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      .post-date{
+        display: inline-block;
+        margin-left: 50px;
+      }
+
       .sharing {
         width: 84px;
         height: 40px;
@@ -16,9 +83,82 @@
       .sharing--shown{
         visibility: visible;
       }
+
     </style>
   </head>
   <body>
+    <div class = "header">
+      <div class = "header-text">
+        <h1 class = "">Highlight Text Sharing Menu</h1>
+      </div>
+      <div class = "navigation">
+        <ul>
+          <li>What this does.</li>
+          <li>Goals</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class = "container">
+      <div class = "posts">
+        <div class = "post-header">
+          <div class = "post-title">Ze First Post</div>
+          <div class = "post-date">March 29, 2009</div>
+        </div>
+        <p>The highlight text and share menu only works for text wrapped with "paragraph" tags such as this text here.</p>
+      </div>
+      <div class = "posts">
+        <div class = "post-header">
+          <div class = "post-title">2nd Post</div>
+          <div class = "post-date">March 29, 2009</div>
+        </div>
+        <p>I am using Javascript as of right now.</p>
+      </div>
+      <div class = "posts">
+        <div class = "post-header">
+          <div class = "post-title">Third Post</div>
+          <div class = "post-date">March 29, 2009</div>
+        </div>
+        <p>Both on the serverside and on the clientside.</p>
+      </div>
+      <div class = "posts">
+        <div class = "post-header">
+          <div class = "post-title">Fourth Post</div>
+          <div class = "post-date">March 29, 2009</div>
+        </div>
+        <p>
+          Unfortunately, it has become popular to use fancier versions of javascript.
+          As a result, one must now use a compiler of sorts to transpile newer syntactic versions of javascript into ES5 which is more widely supported by modern internet browsers.
+        </p>
+      </div>
+      <div class = "posts">
+        <div class = "post-header">
+          <div class = "post-title">Ze First Post</div>
+          <div class = "post-date">March 29, 2009</div>
+        </div>
+        <p>And with this vast array of text, I have now sufficiently shown to myself that the sharing buttons appear after I have hightlighted some text.</p>
+      </div>
+      <div class = "posts">
+        <div class = "post-header">
+          <div class = "post-title">Penultimate Post</div>
+          <div class = "post-date">December 31, 2006</div>
+        </div>
+        <p>
+           My apologies for the poorly written text above.  I realize that not all of the above sentences are written in the most formal manner.
+        </p>
+      </div>
+      <div class = "posts">
+        <div class = "post-header">
+          <div class = "post-title">Final Post</div>
+          <div class = "post-date">March 29, 2019</div>
+        </div>
+        <p>
+           Also, kindly excuse the aesthetic.
+        </p>
+      </div>
+    </div>
     <div class = "sharing">
       <div class = "sharing_buttons">
         <button id = "share" title = "Share">
@@ -77,6 +217,32 @@
         sharing.style.left = (highlight.rect.left + width) + "px";
         sharing.style.top = (highlight.rect.top - 40) + "px";
         //Raise El by height of the messaging box
+      }
+
+      document.body.addEventListener("mouseup", function(){
+        setTimeout(showMenu, 100);
+      });
+
+      function openShareWindow(url, w, h){
+        var screenLeft = (window.screenLeft !== undefined)
+                      ? window.screenLeft
+                      : screenleft;
+        var screenTop = (window.screenTop !== undefined)
+                    ? window.screenTop
+                    : screen.top;
+        var width = (window.innerWidth ? window.innerWidth : doc.documentElement.clientWidth)
+                  ? doc.documentElement.clientWidth
+                  : screen.width;
+        var height = (window.innerHeight ? window.innerHeight : doc.documentElement.clientHeight)
+                  ? doc.documentElement.clientHeight
+                  : screen.height;
+        var left = ((width/2) - (w/2)) + screenLeft;
+        var top = ((height/2) - (h/2)) + screenTop;
+        var newWinString = "";
+        var newWin = window.open(url, "", "scrollbars=no,width=" + w + ",height=" + h + ",top=" + top + ",left=" + left);
+
+        if(newWin)
+          newWin.focus();
       }
     </script>
   </body>
