@@ -12,17 +12,22 @@ html, body{
   color: white;
   top: 5%;
   right: 13%;
-  padding: 2% 5% 2% 5%;
+  height: 10%;
+  width: 25%;
+
 }
 
 .auth_id{
   display: inline-block;
   height: 100%;
+  background-color: green;
+
+
 }
 .auth_notifications{
   display: inline-block;
   height: 100%;
-  background-color: red;
+  background-color: black;
 
 }
 .auth_sources{
@@ -41,43 +46,58 @@ html, body{
   height: 2%;
 }
 
+.slot{
+  color: black;
+  width: 33%;
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
 .primary_container{
   position: relative;
   height: 65%;
   width: 80%;
   top: 15%;
-  background-color: lavender;
   padding: 5% 10% 5% 10%;
-
   overflow: hidden;
 }
 
 #left_arrow{
   position: absolute;
-  top: 50%;
+  top: 40%;
   background-color: black;
+  height: 10%;
+  color: white;
   left: 5%;
 }
 
 #right_arrow{
   position: absolute;
-  top: 50%;
+  top: 40%;
   background-color: black;
+  height: 10%;
+  color: white;
   right: 5%;
 }
 
-.current_view{
+.primary_view{
   width: 100%;
   background-color: green;
   height: 100%;
   padding-bottom: 2%;
+  display: block;
   overflow: hidden;
+  display: none;
 }
 
 .inactive_view{
   display: none;
 }
 
+.curr_active_view{
+  display: block;
+}
 
 .box{
   display: inline-block;
@@ -89,8 +109,6 @@ html, body{
   margin: 0.25% 0.25% 0.25% 0.25%;
 }
 
-
-
 .box_content{
   position: absolute;
   top: 0;
@@ -99,20 +117,23 @@ html, body{
   right: 0;
   padding: 20% 20% 20% 20%;
 
-  background-color: blue;
+  background-color: purple;
   color: white;
+  z-index: 900;
 }
 
-.box_content > .close{
+.close{
   background-color: black;
   position: absolute;
   top: 0;
   right: 0;
   font-weight: bolder;
-
-
+  display:none;
+  height: 20%;
+  width: 20%;
+  z-index: 1000;
 }
 
-.box_content:hover{
-
+.box_content:hover .close{
+  display: block;
 }
