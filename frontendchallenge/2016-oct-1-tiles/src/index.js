@@ -8,7 +8,7 @@ navigator.getMedia = (
 if(!navigator.getMedia){
   console.log("[%s] Camera API ABSENT", new Date().toLocaleTimeString());
 }else{
-  console.log("[%s] Camera API PRESENT", new Date().toLocaleTimeString());  
+  console.log("[%s] Camera API PRESENT", new Date().toLocaleTimeString());
 }
 
 function getNumberOfViews(){
@@ -54,6 +54,15 @@ function setup(){
   progSlider[currView].style.backgroundColor = "blue";
 }
 
+function leftArrowClick(){
+  previousSlide();
+  setup();
+}
+
+function rightArrowClick(){
+  nextSlide();
+  setup();
+}
 
 setup();
 

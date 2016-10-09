@@ -6,16 +6,34 @@
   </head>
   <body>
     <div id = "auth_container">
-      <div class = "auth_id">Robert</div>
+      <div class = "auth_id">
+        <div class = "auth_content">
+          Robert
+        </div>
+      </div>
       <div class = "auth_notifications">
-        <div class = "auth_sources">3 Feeds</div>
-        <div class = "auth_count">5000 Notifications</div>
+        <div class = "auth_sources">
+          <div class = "auth_content">
+            3
+          </div>
+          <div class = "auth_title">
+            Sources
+          </div>
+        </div>
+        <div class = "auth_count">
+          <div class = "auth_content">
+            5000
+          </div>
+          <div class = "auth_title">
+            Notifications
+          </div>
+        </div>
       </div>
     </div>
 
     <div class = "primary_container">
-      <div id = "left_arrow"> < </div>
-      <div id = "right_arrow"> > </div>
+      <div id = "left_arrow" onclick = "leftArrowClick()"> < </div>
+      <div id = "right_arrow" onclick = "rightArrowClick()"> > </div>
 
       <div class = "primary_view">
 
@@ -29,10 +47,13 @@
             I'm a cat.
           </div>
         </div>
-        <div class  = "box">
+        <div class = "box">
           <div class = "box_content">
-            I'm a cat.
+            <div class = "close">x</div>
+            <div class = "box_value">1500</div>
+            <div class = "box_title">box title</div>
           </div>
+
         </div>
         <div class  = "box">
           <div class = "box_content">
@@ -196,29 +217,50 @@
             I'm a cat.
           </div>
         </div>
+
         <div class  = "box">
           <div class = "box_content">
             I'm a cat.
+            <div class = "box_title">
+              Box title
+            </div>
             <div class = "close">
                 x
             </div>
           </div>
-
         </div>
 
 
       </div>
       <div class = "primary_view">
-        asdf
+        <div class = "box">
+          <div class = "box_content">
+            <div class = "close">x</div>
+            <div class = "box_value">1500</div>
+            <div class = "box_title">box title</div>
+          </div>
+
+        </div>
       </div>
       <div class = "primary_view">
-        Third Page
+        <div class = "box_34">
+          <div class = "box_34_content"></div>
+          <div class = "box_34_title"></div>
+        </div>
+        <div class = "box_32">
+          <div class = "box_32_content"></div>
+          <div class = "box_32_title"></div>
+        </div>
+        <div class = "box_31">
+          <div class = "box_31_content"></div>
+          <div class = "box_31_title"></div>
+        </div>
       </div>
     </div>
     <div id = "progress_slider">
-      <div class = "slot">1</div>
-      <div class = "slot">2</div>
-      <div class = "slot">3</div>
+      <div class = "slot"></div>
+      <div class = "slot"></div>
+      <div class = "slot"></div>
     </div>
     <script type = "text/javascript" src = "index.js"></script>
   </body>

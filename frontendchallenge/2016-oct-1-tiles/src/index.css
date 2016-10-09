@@ -3,8 +3,8 @@ html, body{
   width: 100%;
   background-color: rgb(61, 21, 175);
   margin: 0;
+  font-family: "Segoe UI";
 }
-
 
 #auth_container{
   position: fixed;
@@ -14,27 +14,56 @@ html, body{
   right: 13%;
   height: 10%;
   width: 25%;
-
+  overflow-y: hidden;
 }
 
 .auth_id{
+  vertical-align: top;
   display: inline-block;
   height: 100%;
   background-color: green;
-
+  width: 24%;
 
 }
 .auth_notifications{
+  vertical-align: top;
   display: inline-block;
   height: 100%;
   background-color: black;
+  width: 75%;
 
 }
 .auth_sources{
+  vertical-align: top;
   display: inline-block;
+  background-color: red;
+  position: relative;
+  height: 100%;
+  width: 49%;
 }
 .auth_count{
+  vertical-align: top;
   display: inline-block;
+  background-color: pink;
+  position: relative;
+  height: 100%;
+  width: 49%;
+}
+
+.auth_content{
+  background-color: gray;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  top: 40%;
+  width: 100%;
+}
+
+.auth_title{
+  background-color: red;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
 }
 
 
@@ -116,10 +145,29 @@ html, body{
   bottom: 0;
   right: 0;
   padding: 20% 20% 20% 20%;
-
+  border: 1px solid transparent;
   background-color: purple;
   color: white;
   z-index: 900;
+}
+
+.box_title{
+  position: absolute;
+  background-color: red;
+  left: 8%;
+  bottom: 8%;
+  width: 100%;
+}
+
+.box_value{
+  position: absolute;
+  font-size: 300%;
+  background-color: teal;
+  top: 30%;
+  width: 84%;
+  text-align: center;
+  overflow-x: hidden;
+  left: 8%;
 }
 
 .close{
@@ -129,11 +177,29 @@ html, body{
   right: 0;
   font-weight: bolder;
   display:none;
-  height: 20%;
-  width: 20%;
+  height: 15%;
+  width: 15%;
   z-index: 1000;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.box_content:hover{
+  border-color: white;
+  border-style: solid;
+  border-width: 1%;
 }
 
 .box_content:hover .close{
   display: block;
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.box_34{
+}
+
+.box_32{
+
 }
