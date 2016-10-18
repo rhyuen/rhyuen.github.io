@@ -1,7 +1,6 @@
 html, body{
   height: 100%;
   width: 100%;
-  background-color: gray;
   color: white;
   font-family: "Segoe UI";
   position: relative;
@@ -20,26 +19,37 @@ html, body{
 }
 
 #header_logo{
-  background-color: pink;
-  left: 0;
+  float: left;
+
   position: relative;
   display: inline-block;
+  width: auto;
   height: 100%;
+  top: 40%;
   vertical-align: top;
 }
 
 #header_rightside{
-  background-color: red;
-  right: 0;
+  width: auto;
+  float: right;
   display: inline-block;
   position: relative;
   height: 100%;
+  top: 40%;
   vertical-align: top;
+
+}
+
+#header_rightside > #login{
+  display:inline-block;
+}
+
+#header_rightside > #search{
+  display:inline-block;
 }
 
 .user_details{
-  background-color: pink;
-  color: blue;
+  color: black;
   height: 10%;
   width: 60%;
   padding-left: 20%;
@@ -47,8 +57,22 @@ html, body{
   /*overflow-y: hidden;*/
 }
 
+
+.user_name_text{
+  display: inline-block;
+}
+
+.user_name_follow{
+  display: inline-block;
+  color: green;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 10%;
+  border: 2px solid green;
+}
+
 .user_avatar{
-  background-color: white;
+  background-color: gray;
   height: 100%;
   width: 10%;
   display: inline-block;
@@ -57,8 +81,8 @@ html, body{
 
 .user_rightside{
   display:inline-block;
-  height: 100%;
-  width: 50%;
+  height: 80%;
+  width: auto;
   vertical-align: top;
 }
 
@@ -69,18 +93,42 @@ html, body{
   padding-right: 20%;
   width: 60%;
   height: 100%;
-
+  font-size: 21px;
 }
+
+
+.article_title{
+  padding: 1% 0% 1% 0%;
+
+  font-weight: bolder;
+}
+
+.article_subheading{
+  font-weight: bold;
+  padding: 0.5% 0% 0.5% 0%;
+}
+
+.article_para{
+  padding-bottom: 2%;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 
 
 .share_bar{
   position: fixed;
-  width: auto;
-  background-color: white;
+  width: 5%;
+  background-color: rgb(216, 179, 236);
   color: black;
-  top: 15%;
+  top: 20%;
   left: 15%;
   text-align: center;
+  font-size: 16pt;
+}
+
+.share_bar > div{
+  padding: 5% 0% 5% 0%;
 }
 
 footer{
@@ -92,4 +140,33 @@ footer{
   height: 10%;
   background-color: white;
   color: green;
+  overflow-y: hidden;
+}
+
+#footer_left{
+  position: relative;
+  top: 50%;
+  float: left;
+  background-color: pink;
+
+}
+
+#footer_right{
+  float: right;
+  position: relative;
+  top: 50%;
+}
+
+.footer_social_media{
+  display: inline-block;
+  height: 100%;
+}
+
+.footer_next_link{
+  display: inline-block;
+}
+
+.footer_icon_slot{
+  height: 100%;
+
 }
