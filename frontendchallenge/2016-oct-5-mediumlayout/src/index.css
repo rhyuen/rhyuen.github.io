@@ -4,4 +4,92 @@ html, body{
   background-color: gray;
   color: white;
   font-family: "Segoe UI";
+  position: relative;
+  border: 0;
+  margin: 0;
+}
+
+#header{
+  top: 0;
+  width: 80%;
+  height: 10%;
+  background-color: white;
+  color: green;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#header_logo{
+  background-color: pink;
+  left: 0;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+}
+
+#header_rightside{
+  background-color: red;
+  right: 0;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  vertical-align: top;
+}
+
+.user_details{
+  background-color: pink;
+  color: blue;
+  height: 10%;
+  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+  /*overflow-y: hidden;*/
+}
+
+.user_avatar{
+  background-color: white;
+  height: 100%;
+  width: 10%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.user_rightside{
+  display:inline-block;
+  height: 100%;
+  width: 50%;
+  vertical-align: top;
+}
+
+.article_container{
+  background-color: rgb(171, 242, 162);
+  color: black;
+  padding-left: 20%;
+  padding-right: 20%;
+  width: 60%;
+  height: 100%;
+
+}
+
+
+.share_bar{
+  position: fixed;
+  width: auto;
+  background-color: white;
+  color: black;
+  top: 15%;
+  left: 15%;
+  text-align: center;
+}
+
+footer{
+  position: fixed;
+  padding-left: 20%;
+  padding-right: 20%;
+  bottom: 0;
+  width: 60%;
+  height: 10%;
+  background-color: white;
+  color: green;
 }
