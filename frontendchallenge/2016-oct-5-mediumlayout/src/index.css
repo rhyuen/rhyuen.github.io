@@ -6,6 +6,7 @@ html, body{
   position: relative;
   border: 0;
   margin: 0;
+  z-index: 100;
 }
 
 #header{
@@ -37,8 +38,9 @@ html, body{
   height: 100%;
   top: 40%;
   vertical-align: top;
-
 }
+
+
 
 #header_rightside > #login{
   display:inline-block;
@@ -57,16 +59,11 @@ html, body{
   /*overflow-y: hidden;*/
 }
 
-
-.user_name_text{
-  display: inline-block;
-}
-
 .user_name_follow{
-  display: inline-block;
   color: green;
   padding-left: 5%;
   padding-right: 5%;
+  margin-left: 5%;
   border-radius: 10%;
   border: 2px solid green;
 }
@@ -77,13 +74,20 @@ html, body{
   width: 10%;
   display: inline-block;
   vertical-align: top;
+  border-radius: 100%;
 }
+
 
 .user_rightside{
   display:inline-block;
   height: 80%;
   width: auto;
   vertical-align: top;
+  padding-left: 2%;
+}
+
+.user_rightside > div{
+  margin: 2% 0% 2% 0%;
 }
 
 .article_container{
@@ -92,15 +96,15 @@ html, body{
   padding-left: 20%;
   padding-right: 20%;
   width: 60%;
-  height: 100%;
+  height: auto;
   font-size: 21px;
 }
 
 
 .article_title{
-  padding: 1% 0% 1% 0%;
-
+  padding: 3% 0% 1% 0%;
   font-weight: bolder;
+  font-size: 32pt;
 }
 
 .article_subheading{
@@ -122,9 +126,11 @@ html, body{
   background-color: rgb(216, 179, 236);
   color: black;
   top: 20%;
-  left: 15%;
+  left: 10%;
   text-align: center;
   font-size: 16pt;
+  margin-top: 2%;
+
 }
 
 .share_bar > div{
@@ -168,5 +174,21 @@ footer{
 
 .footer_icon_slot{
   height: 100%;
+}
 
+.other_articles_bar{
+
+}
+
+
+.overlay_login{
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
 }

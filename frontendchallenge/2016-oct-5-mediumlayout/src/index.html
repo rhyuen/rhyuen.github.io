@@ -9,45 +9,118 @@
       <div id = "header_logo">LOGO</div>
       <div id = "header_rightside">
         <div id = "login">Signin/Signup</div>
-        <div id = "search">Search Icon</div>
+        <div id = "search">| Search</div>
       </div>
     </div>
 
     <div class = "user_details">
-      <div class = "user_avatar">AVA</div>
+      <div class = "user_avatar"></div>
       <div class = "user_rightside">
         <div class = "user_name_block">
-          <div class = "user_name_text">UserName</div>
-          <div class = "user_name_follow">Follow</div>
+          <span class = "user_name_text">Robert's Name</span>
+          <span class = "user_name_follow">Follow</span>
         </div>
-        <div class = "user_description">User Details such as how nutso awesome I am.</div>
+        <div class = "user_description">I am a frontend developer that pushes buttons and pushes out his muses without restraint.</div>
         <div class = "user_post_details">October 29, 2016 | 50 minute read</div>
       </div>
     </div>
 
     <div class = "article_container">
-      <div class = "article_title">Article Title</div>
+      <div class = "article_title">Article Title, implementing the Medium Layout.</div>
       <div class = "article_subheading">Article subheading</div>
       <div class = "article_para">
-        Random Text filler for spacing and stuff.
+        Random Text filler for spacing and stuff. I found a bunch of atom plugins for Lorem Ipsum and what not but ...
+        It's just not confusing but difficult?  Probably not the right choice of words but I'm conflicted.  There's one that seems okay but it doesn't have nearly as many downloads and/or stars as the other ones.  However, the more popular ones don't seem nearly as appealing as the former.  One could try them both out but it seems like kind of an inconvenience...given all the restarting of stuff and what not...
+      </div>
+
+      <div class = "article_subheading">Lamentation Article subheading.  Is it even a word?  I wonder what happens when the subheading is far too long.  How does the HTML/CSS handle itself?  Reasonably well, it seems.</div>
+      <div class = "article_para">
+        Why does it take forever to do this?  The internet makes it seem like you should be able to fire one of these off in no time at all and make it uber pretty to top it off as well.  Sigh, I lament over this a lot. Tis quite concerning.
+      </div>
+
+      <div class = "article_subheading">ISSUE: The User Description</div>
+      <div class = "article_para">
+        User descripotion box expands in size as you add more text to it.
+      </div>
+
+      <div class = "article_subheading">TODO: POPUP</div>
+      <div class = "article_para">
+        I also need to add the POPUP at the bottom right once you get to the bottom of the page.
+      </div>
+
+      <div class = "article_subheading">IRRITATION: CIRCLE</div>
+      <div class = "article_para">
+        It bothers me that the avatar circle is not perfectly round.  I should look into that.  I imagine it'll be as challenging as drawing perfect square.
       </div>
 
       <div class = "article_subheading">Article subheading</div>
       <div class = "article_para">
         Random Text filler for spacing and stuff.
+
+        Oh boy, these service workers and what not.  They seem quite interesting with their lack of access to the dom.  Well, not really, with respect to their lack of access to the DOM. If I recall correctly, it just has to do with it being done programmatically.
       </div>
 
-      <div class = "article_subheading">Article subheading</div>
+      <div class = "article_subheading">Cross browser testing</div>
       <div class = "article_para">
         Random Text filler for spacing and stuff.  Such random text.  So many solutions for so many problems and/or itches that must be scratched.  Hopefully, this fillter text does its job and fills up the page as needed.  Yes, I know that the lorem ipsum text is here but I hvae yet to figure out where the option is.
+
+        It would be ever so lovely if there were a one stop shop for tips regarding how to write one of those responsive web applications.  There probably are, however, I have yet to divine the magical 'Google' words that ever so elegantly delivers the link to me.
       </div>
 
       <div class = "article_subheading">Article subheading</div>
       <div class = "article_para">
         Random Text filler for spacing and stuff.
+
+        In case, thou hath not noticed, I am writing just whatever comes ot my mind with minimal restraint.  It's interesting how medium uses SVG to draw all of its icons as opposed to saving a png/img and then loading it from somewhere or caching it on the user's machine. On the one hand, it's easier for me to cut and paste.  Well, no, not really.  I'm not terribly familiar with SVG.  Although numbers and whatnot leading to such an elegantly drawn picture.  Painstakingly crafted and/or nit-picked by numerous engineers and/or designers.  And here I am, stealing/borrowing the fruits of their labour.  It disturbs me that not all of the previously written sentences are formally complete sentences and that there are errors abound. Sadly, I'll just have to live with it.
+      </div>
+
+      <div class = "article_subheading">Article subheading</div>
+      <div class = "article_para">
+        Random Text filler for spacing and stuff.
+
+        I believe with all of this extra text that I have written, I have finally achieved my goal.  I have uncovered spacing issues that I was not at the time acutely aware of. The banner at the bottom is fixed.  However, the text at the bottom of the page is obscured by the banner at the bottom.  There's probably a trick of some sort with this witchcrafty language that is CSS.
+
+        Yet another issue uncovered.  The background-color does not carry forth beyond the 100% I have denoted earlier.
+        I have just discovered the solution, at least for the time being.  A mere change from 100% for height with respect ot hte article_container to 'auto' addresses my woes.
+      </div>
+
+      <div class = "article_subheading">I goofed</div>
+      <div class = "article_para">
+        So it seems I was looking at the medium page zoomed in by a a certain amount whilst diong this entire activity.  Thus, unfortunately, the proportions are a bit off.
+      </div>
+
+    </div>
+
+    <div class = "user_details">
+      <div class = "user_avatar"></div>
+      <div class = "user_rightside">
+        <span class = "user_name_text">Robert's Name</span>
+        <span class = "user_name_follow">Follow</span>
+      </div>
+      <div class = "user_description">I am a frontend developer that pushes buttons willy-nilly.</div>
+    </div>
+
+    <div class = "other_articles_bar">
+      <div class = "other_articles_tile">
+        <div class = "other_art_picture">
+
+        </div>
+        <div class = "other_art_information">
+          <div class = "other_art_title">Other Title</div>
+          <div class = "other_art_user">
+
+          </div>
+        </div>
+      </div>
+      <div class = "other_articles_tile">
+      </div>
+      <div class = "other_articles_tile">
       </div>
     </div>
 
+    <div class = "comments_bar">
+
+    </div>
 
     <div class = "share_bar">
       <div>SHARE</div>
@@ -74,6 +147,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type = "text/javascript" src = "index.js"></script>
   </body>
 </html>
