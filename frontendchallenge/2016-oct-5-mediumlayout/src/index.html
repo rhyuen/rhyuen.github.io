@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
     <title>Medium Layout</title>
     <link rel = "stylesheet" href = "index.css"/>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-79749730-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
   <body>
     <div id = "header">
@@ -35,7 +44,13 @@
 
       <div class = "article_subheading">Lamentation Article subheading.  Is it even a word?  I wonder what happens when the subheading is far too long.  How does the HTML/CSS handle itself?  Reasonably well, it seems.</div>
       <div class = "article_para">
-        Why does it take forever to do this?  The internet makes it seem like you should be able to fire one of these off in no time at all and make it uber pretty to top it off as well.  Sigh, I lament over this a lot. Tis quite concerning.
+        Why does it take forever to do this? <br /><br />
+        The internet makes it seem like you should be able to fire one of these off in no time at all and make it uber pretty to top it off as well.  Sigh, I lament over this a lot. Tis quite concerning.
+      </div>
+
+      <div class = "article_subheading">ISSUE: The User Description</div>
+      <div class = "article_para">
+        User descripotion box expands in size as you add more text to it.
       </div>
 
       <div class = "article_subheading">ISSUE: The User Description</div>
@@ -91,13 +106,8 @@
 
     </div>
 
-    <div class = "user_details">
-      <div class = "user_avatar"></div>
-      <div class = "user_rightside">
-        <span class = "user_name_text">Robert's Name</span>
-        <span class = "user_name_follow">Follow</span>
-      </div>
-      <div class = "user_description">I am a frontend developer that pushes buttons willy-nilly.</div>
+    <div class = "user_details_end">
+
     </div>
 
     <div class = "other_articles_bar">
@@ -124,9 +134,8 @@
 
     <div class = "share_bar">
       <div>SHARE</div>
-      <div>Sh_C</div>
-      <div><span>Likes</span></div>
-      <div>Li_C</div>
+      <div>HEART</div>
+      <div>20</div>
       <div><span>Tt</span></div>
       <div><span>FB</span></div>
     </div>

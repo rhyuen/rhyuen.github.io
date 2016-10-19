@@ -50,7 +50,7 @@ html, body{
   display:inline-block;
 }
 
-.user_details{
+.user_details, .user_details_end{
   color: black;
   height: 10%;
   width: 60%;
@@ -92,6 +92,7 @@ html, body{
 
 .article_container{
   background-color: rgb(171, 242, 162);
+  background-color: white;
   color: black;
   padding-left: 20%;
   padding-right: 20%;
@@ -147,6 +148,9 @@ footer{
   background-color: white;
   color: green;
   overflow-y: hidden;
+  border-width: 0.1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-style: solid;
 }
 
 #footer_left{
@@ -175,6 +179,12 @@ footer{
 .footer_icon_slot{
   height: 100%;
 }
+
+
+.user_details_end {
+
+}
+
 
 .other_articles_bar{
 
