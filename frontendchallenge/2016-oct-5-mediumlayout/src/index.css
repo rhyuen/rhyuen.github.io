@@ -17,11 +17,13 @@ html, body{
   color: green;
   padding-left: 10%;
   padding-right: 10%;
+  border-bottom: 0.1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-style: solid;
 }
 
 #header_logo{
   float: left;
-
   position: relative;
   display: inline-block;
   width: auto;
@@ -56,6 +58,7 @@ html, body{
   width: 60%;
   padding-left: 20%;
   padding-right: 20%;
+  padding-top: 2%;
   /*overflow-y: hidden;*/
 }
 
@@ -69,13 +72,14 @@ html, body{
 }
 
 .user_avatar{
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.1);
   height: 100%;
-  width: 10%;
+  width: 9%;
   display: inline-block;
   vertical-align: top;
   border-radius: 100%;
 }
+
 
 
 .user_rightside{
@@ -91,7 +95,6 @@ html, body{
 }
 
 .article_container{
-  background-color: rgb(171, 242, 162);
   background-color: white;
   color: black;
   padding-left: 20%;
@@ -124,7 +127,7 @@ html, body{
 .share_bar{
   position: fixed;
   width: 5%;
-  background-color: rgb(216, 179, 236);
+  /*background-color: rgb(216, 179, 236);*/
   color: black;
   top: 20%;
   left: 10%;
@@ -139,32 +142,40 @@ html, body{
 }
 
 footer{
+  background-color: white;
   position: fixed;
   padding-left: 20%;
   padding-right: 20%;
   bottom: 0;
   width: 60%;
-  height: 10%;
-  background-color: white;
+  height: 5%;
   color: green;
   overflow-y: hidden;
-  border-width: 0.1px;
+  border-top: 0.1px;
   border-color: rgba(0, 0, 0, 0.1);
   border-style: solid;
+  font-size: 21pt;
 }
 
 #footer_left{
   position: relative;
-  top: 50%;
+  top: 20%;
   float: left;
-  background-color: pink;
-
 }
 
 #footer_right{
   float: right;
   position: relative;
-  top: 50%;
+  top: 20%;
+
+}
+
+.footer_next_link{
+  float: right;
+  position: relative;
+  top: 20%;
+  left: 20%;
+  font-size: 10pt;
 }
 
 .footer_social_media{
@@ -174,6 +185,7 @@ footer{
 
 .footer_next_link{
   display: inline-block;
+  color: black;
 }
 
 .footer_icon_slot{
@@ -182,8 +194,20 @@ footer{
 
 
 .user_details_end {
-
+  width: 60%;
+  background-color: pink;
 }
+
+
+.bottom_of_page{
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  padding-left: 20%;
+  padding-right: 20%;
+  width: 60%;
+  height: 500px;
+}
+
 
 
 .other_articles_bar{
