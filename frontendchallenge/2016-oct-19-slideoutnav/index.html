@@ -5,11 +5,45 @@
     <link rel = "stylesheet" href = "index.css" />
   </head>
   <body>
-    <div class = "side_navigation">
+    <div id = "side_navigation" class = "sidenav">
+      <a href = "javascript:void(0)" class = "closebtn" onclick = "closeNav()">&times;</a>
       <a href = "#">About</a>
       <a href = "#">Services</a>
       <a href = "#">Clients</a>
-      <a href = "#">Contacts</a>      
+      <a href = "#">Contacts</a>
     </div>
+    <div id = "login" class = "loginpage">
+      <div class = "login_close_border" onclick = "closeLogin()"></div>
+      <div class = "login_form_content">
+        <form>
+          <input type = "text" placeholder="John Doe"/><br/>
+          <input type = "password" placholder = "Password here" />
+        </form>
+        <span href = "javascript:void(0)" class = "closebtn" onclick = "closeLogin()">&times;</span>
+      </div>
+      <div class = "login_close_border" onclick = "closeLogin()"></div>
+    </br/>
+    </div>
+
+    <span class = "openbtn" onclick = "openNav()">&#9776;</span>
+    <span class = "loginbtn" onclick = "openLogin()">&#x25CB;</span>
+
+
+    <script type = "text/javascript">
+      function openNav(){
+        document.getElementById("side_navigation").style.width = "100%";
+      }
+      function closeNav(){
+        document.getElementById("side_navigation").style.width = "0%";
+      }
+
+      function openLogin(){
+        document.getElementById("login").style.width = "100%";
+      }
+
+      function closeLogin(){
+        document.getElementById("login").style.width = "0%";
+      }
+    </script>
   </body>
 </html>

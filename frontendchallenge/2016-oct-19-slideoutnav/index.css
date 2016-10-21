@@ -1,4 +1,75 @@
 html, body{
   background-color: gray;
-  color: white;
+  color: pink;
+  position: relative;
+}
+
+.sidenav{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.loginpage{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;  
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.login_close_border{
+  width: 32%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+.login_form_content{
+  vertical-align: top;
+  background-color: gray;
+  width: 32%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.openbtn{
+  font-size: 36px;
+}
+
+.loginbtn{
+  font-size: 36px;
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+
+.sidenav a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: pink;
+  display:block;
+  transition: 0.3s
+}
+
+
+.sidenav .closebtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+
 }
