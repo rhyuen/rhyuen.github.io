@@ -14,8 +14,15 @@ $(document).ready(function(){
   //   }
   // }
 
-  $("#login").click(function(){
-    $("body").append($("<div/>", {class: "overlay_login"}));
 
-  });
+
+
 });
+
+function openLogin(){
+  document.getElementById("login_panel").style.width = "100%";
+}
+
+function closeLogin(){
+  document.getElementById("login_panel").style.width = "0%";
+}

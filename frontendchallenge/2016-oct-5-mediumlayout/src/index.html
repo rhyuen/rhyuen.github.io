@@ -14,10 +14,30 @@
     </script>
   </head>
   <body>
+    <div id = "login_panel">
+      <div class = "login_panel_close" onclick = "closeLogin()"></div>
+      <div class = "login_panel_form_panel">
+        <div class = "login_panel_close_section" onclick = "closeLogin()"></div>
+        <div class = "login_panel_form_content">
+          <div class = "login_panel_form_content_logo">LOGO</div>
+          <div class = "login_panel_form_content_sso_container">
+            <button id = "form_twitter">Twitter</button>
+            <button id = "form_facebook">Facebook</button>
+            <button id = "form_google">Google</button>
+            <button id = "form_email">Email</button>
+          </div>
+          <div class = "login_panel_form_content_disclaimer">
+            A number of disclaimers are here.  Such as something along the lines of Do Not Track and what not.  In addition, if you stay signed in, we will aggregate some of the informaiton about your usage habits.  You've probably always suspected this but didn't what to be called a nut for pointing it out or acknowledging it.  Chilling effects utilized to great effect by the man.
+          </div>
+        </div>
+        <div class = "login_panel_close_section" onclick = "closeLogin()"></div>
+      </div>
+      <div class = "login_panel_close" onclick = "closeLogin()"></div>
+    </div>
     <div id = "header">
       <div id = "header_logo">LOGO</div>
       <div id = "header_rightside">
-        <div id = "login">Signin/Signup</div>
+        <div id = "login" onclick = "openLogin()">Signin/Signup</div>
         <div id = "search">| Search</div>
       </div>
     </div>
@@ -148,7 +168,7 @@
 
     <div class = "share_bar">
       <div>SHARE</div>
-      <div> &#9825;</div>
+      <div>&#9825;</div>
       <div>20</div>
       <div><span>Tt</span></div>
       <div><span>FB</span></div>

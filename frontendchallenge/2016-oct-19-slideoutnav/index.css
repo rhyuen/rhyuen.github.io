@@ -1,7 +1,8 @@
 html, body{
   background-color: gray;
-  color: pink;
+  color: tomato;
   position: relative;
+  z-index: 1;
 }
 
 .sidenav{
@@ -20,29 +21,37 @@ html, body{
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;  
+  z-index: 1;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   overflow-x: hidden;
-  padding-top: 60px;
+
 }
 
 .login_close_border{
-  width: 32%;
+  width: 33%;
   height: 100%;
-  display: inline-block;
   vertical-align: top;
+  display: inline-block;
+  z-index: 2;
 
 }
 
 .login_form_content{
-  vertical-align: top;
+  vertical-align: middle;
   background-color: gray;
   width: 32%;
   height: 100%;
   display: inline-block;
   position: relative;
+  z-index: 3;
+}
+
+.login_form_content > form{
+  position: relative;
+  top: 50%;
+  left: 20%;
 }
 
 .openbtn{
@@ -65,6 +74,13 @@ html, body{
   transition: 0.3s
 }
 
+
+.login_form_content .closebtn{
+  position: absolute;;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
 
 .sidenav .closebtn{
   position: absolute;
