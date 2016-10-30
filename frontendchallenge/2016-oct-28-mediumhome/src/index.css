@@ -1,0 +1,113 @@
+html, body{
+  border: 0;
+  margin: 0;
+  font-family: "Segoe UI";
+  background-color: #FAFAFA;
+  width: 100%;
+  height: 100%;
+  color: rgba(0,0,0,.44);
+}
+
+li{
+  list-style: none;
+  display: inline-block;
+  background-color: gray;
+}
+
+ul{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+header{
+  padding: 0.75% 20% 0.75% 20%;
+  display: table;
+}
+
+.header_leftside{
+  display: table-cell;
+  width: 75%;
+}
+.header_rightside{
+  display: table-cell;
+  width: 25%;
+}
+
+
+.expand{
+  display: none;
+}
+
+#header_topic{
+  padding-left: 20%;
+  padding-right: 20%;
+  border-bottom: 0.5px solid rgba(0,0,0, 0.1) ;
+}
+
+#header_jumbotron{
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 400px;
+  background-color: LightSlateGrey;
+}
+
+.jumbotron_text{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 50%;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 32px;
+}
+
+#header_jumbotron input{
+  background-color: #02b875;
+  color: white;
+  font-size: 14px;
+  padding: 1%;
+  border-radius: 999em;
+  border: none;
+}
+
+/*not quite 100% of size i want ti to be.*/
+#main_container{
+  padding-top: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: table;
+}
+
+#feedpanel{
+  display: table-cell;
+  width: 75%;
+  background-color: green;
+}
+#sidepanel{
+  font-size: 14px;
+  display: table-cell;
+  
+}
+
+.side_pane_header{
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.side_pane_content{
+
+}
+
+.side_pane_art_details{
+  display: table;
+  width: 100%;
+}
+
+.side_pane_details_ava{
+  display: table-cell;
+
+  width: 25%;
+}
+.side_pane_details_text{
+  display: table-cell;
+  background-color: pink;
+  width: 75%;
+}
