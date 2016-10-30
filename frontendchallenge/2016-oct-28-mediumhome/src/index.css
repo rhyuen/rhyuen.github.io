@@ -11,7 +11,6 @@ html, body{
 li{
   list-style: none;
   display: inline-block;
-  background-color: gray;
 }
 
 ul{
@@ -80,34 +79,100 @@ header{
 #feedpanel{
   display: table-cell;
   width: 75%;
-  background-color: green;
+
 }
+
+.feed_pane{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-right: 5%;
+  padding: 2% 2% 2% 2%;
+  margin-bottom: 2%
+}
+
+.feed_pane_user{
+
+}
+
+.feed_pane_content{
+
+}
+
+.feed_pane_meta{
+  position: relative;
+}
+
+.feed_pane_meta > span{
+  display: inline-block;
+}
+
+.feed_meta_likes{
+
+}
+
+.feed_meta_responses{
+  position: absolute;
+  right: 5%;
+}
+
+.feed_meta_bookmark{
+  position: absolute;
+  right: 0%;
+}
+
 #sidepanel{
+  vertical-align: top;
   font-size: 14px;
   display: table-cell;
-  
 }
 
 .side_pane_header{
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+
+}
+.side_pane_header_subtitle{
+  color: black;
 }
 
 .side_pane_content{
-
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .side_pane_art_details{
   display: table;
   width: 100%;
+  margin-bottom: 8%;
 }
 
 .side_pane_details_ava{
   display: table-cell;
-
-  width: 25%;
+  width: 20%;
 }
-.side_pane_details_text{
-  display: table-cell;
-  background-color: pink;
+
+.circle{
+  border-radius: 50%;
   width: 75%;
+  padding-bottom: 75%;
+  background-color: rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.circle > p{
+  position: absolute;
+  bottom: -25%;
+  right: 30%;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.side_pane_details_text{
+  vertical-align: top;
+  display: table-cell;
+  width: 80%;
+}
+
+.side_pane_details_artname{
+  font-weight: bold;
 }
