@@ -11,6 +11,7 @@ html, body{
 li{
   list-style: none;
   display: inline-block;
+  padding: 0px 14px 0px 0px;
 }
 
 ul{
@@ -19,17 +20,21 @@ ul{
 }
 
 header{
+  width: 60%;
   padding: 0.75% 20% 0.75% 20%;
   display: table;
+  background-color: white;
 }
 
 .header_leftside{
   display: table-cell;
-  width: 75%;
+  width: 80%;
 }
 .header_rightside{
   display: table-cell;
-  width: 25%;
+  font-size: 14px;
+  text-align: right;
+  width: 20%;
 }
 
 
@@ -41,6 +46,7 @@ header{
   padding-left: 20%;
   padding-right: 20%;
   border-bottom: 0.5px solid rgba(0,0,0, 0.1) ;
+  background-color: white;
 }
 
 #header_jumbotron{
@@ -53,19 +59,21 @@ header{
 .jumbotron_text{
   padding-top: 5%;
   padding-bottom: 5%;
+  color: black;
   width: 50%;
   font-weight: 700;
   line-height: 1.2;
   font-size: 32px;
 }
 
-#header_jumbotron input{
+.green_button{
   background-color: #02b875;
   color: white;
   font-size: 14px;
-  padding: 1%;
+  padding: 0px 16px;
   border-radius: 999em;
   border: none;
+  line-height: 35px;
 }
 
 /*not quite 100% of size i want ti to be.*/
@@ -91,11 +99,37 @@ header{
 }
 
 .feed_pane_user{
+  display: table;
+  width: 100%;
+}
+
+.feed_user_ava{
+  display: table-cell;
+  width: 5%;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.feed_user_name{
+  color: #02b875;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.feed_user_details{
+  display: table-cell;
+  font-size: 12px;
+  width: 95%;
+  padding-left: 2%;
 
 }
 
 .feed_pane_content{
 
+}
+
+.heart{
+  color: #02b875;
+  font-size: 25px;  
 }
 
 .feed_pane_meta{
@@ -127,11 +161,21 @@ header{
 }
 
 .side_pane_header{
+  padding-bottom: 5%;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-
+  position: relative;
 }
+
 .side_pane_header_subtitle{
   color: black;
+}
+
+.side_pane_header > .close_button{
+  position: absolute;
+  font-size: 18px;
+  top: -10%;
+  right: 5%;
+
 }
 
 .side_pane_content{
@@ -175,4 +219,12 @@ header{
 
 .side_pane_details_artname{
   font-weight: bold;
+}
+
+.side_pane_text{
+  padding-bottom: 16px;
+}
+
+.footer_contents{
+  font-size: 11px;
 }

@@ -15,7 +15,6 @@
         <span>&#x2315;</span>
         <span class = "expand"><input type = "text" placeholder = "Search Medium" /></span>
       </div>
-
     </header>
     <div id = "header_topic">
       <ul>
@@ -27,7 +26,6 @@
         <li>Another headline</li>
         <li>Seadline</li>
         <li>Line</li>
-        <li>BabelJS</li>
         <li>RxJS</li>
         <li>ReactJS is V in MVC</li>
         <li>Book marks</li>
@@ -37,13 +35,19 @@
       <div class = "jumbotron_text">
         Blog is the resting place for precocious minds abound.  They include the shrewd and the daring that portray their thoughts into text worth looking at.
       </div>
-      <input type = "button" value = "Get started"/>
+      <input class = "green_button" type = "button" value = "Get started"/>
     </div>
     <div id = "main_container">
       <div id = "feedpanel">
         <div class = "feed_pane">
           <div class = "feed_pane_user">
-            AVA, Name, RelTime, TTL
+            <div class = "feed_user_ava"></div>
+            <div class = "feed_user_details">
+              <div class = "feed_user_name">Black Panther</div>
+              <div class = "feed_user_artdetails">
+                <span>2000 days ago</span> | <span>30 min read</span>
+              </div>
+            </div>
           </div>
           <div class = "feed_pane_content">
             <h3>Docker, into the quicksand.</h3>
@@ -51,15 +55,21 @@
             <h4>Read more...</h4>
           </div>
           <div class = "feed_pane_meta">
-            <span>Likes</span>
-            <span>Responses</span>
-            <span>BookmarkIcon</span>
+            <span class = "feed_meta_likes">&#x2661; 1320</span>
+            <span class = "feed_meta_responses">5 Responses</span>
+            <span class = "feed_meta_bookmark"> &#10063;</span>
           </div>
         </div>
 
         <div class = "feed_pane">
           <div class = "feed_pane_user">
-            AVA, Name, RelTime, TTL
+            <div class = "feed_user_ava"></div>
+            <div class = "feed_user_details">
+              <div class = "feed_user_name">Clark Kent</div>
+              <div class = "feed_user_artdetails">
+                <span>5 days ago</span> | <span>5 min read</span>
+              </div>
+            </div>
           </div>
           <div class = "feed_pane_content">
             <h3>React, yet another framework to learn.</h3>
@@ -67,7 +77,7 @@
             <h4>Read more...</h4>
           </div>
           <div class = "feed_pane_meta">
-            <span class = "feed_meta_likes">&#x2661; 20</span>
+            <span class = "feed_meta_likes"><span class = "heart">&#x2661;</span> 20</span>
             <span class = "feed_meta_responses">1 Responses</span>
             <span class = "feed_meta_bookmark"> &#10063;</span>
           </div>
@@ -75,22 +85,34 @@
 
         <div class = "feed_pane">
           <div class = "feed_pane_user">
-            AVA, Name, RelTime, TTL
+            <div class = "feed_user_ava"></div>
+            <div class = "feed_user_details">
+              <div class = "feed_user_name">Wade Wilson</div>
+              <div class = "feed_user_artdetails">
+                <span>19 days ago</span> | <span>400 min read</span>
+              </div>
+            </div>
           </div>
           <div class = "feed_pane_content">
             <h3>Feed pane content header</h3>
             <p>The corresponding text for this feed card/panel thing.</p>
           </div>
           <div class = "feed_pane_meta">
-            <span>Likes</span>
-            <span>Responses</span>
-            <span>BookmarkIcon</span>
+            <span class = "feed_meta_likes">&#x2661; 4.2K</span>
+            <span class = "feed_meta_responses">127 Responses</span>
+            <span class = "feed_meta_bookmark"> &#10063;</span>
           </div>
         </div>
 
         <div class = "feed_pane">
           <div class = "feed_pane_user">
-            AVA, Name, RelTime, TTL
+            <div class = "feed_user_ava"></div>
+            <div class = "feed_user_details">
+              <div class = "feed_user_name">Bruce Wayne</div>
+              <div class = "feed_user_artdetails">
+                <span>N days ago</span> | <span>N min read</span>
+              </div>
+            </div>
           </div>
           <div class = "feed_pane_content">
             <h3>It's complicated.</h3>
@@ -105,7 +127,13 @@
 
         <div class = "feed_pane">
           <div class = "feed_pane_user">
-            AVA, Name, RelTime, TTL
+            <div class = "feed_user_ava"></div>
+            <div class = "feed_user_details">
+              <div class = "feed_user_name">Stephen Strange</div>
+              <div class = "feed_user_artdetails">
+                <span>8 days ago</span> | <span>9000 min read</span>
+              </div>
+            </div>
           </div>
           <div class = "feed_pane_content">
             <h3>I should start logging this.</h3>
@@ -151,7 +179,9 @@
             </div>
             <div class = "side_pane_art_details">
               <div class = "side_pane_details_ava">
-                AVA
+                <div class = "circle">
+                  <p>B</p>
+                </div>
               </div>
               <div class = "side_pane_details_text">
                 <div class = "side_pane_details_artname">Ressurection</div>
@@ -172,21 +202,33 @@
           </div>
           <div class = "side_pane_content">
             <div class = "side_pane_art_details">
-              <div class = "side_pane_details_ava">AVA</div>
+              <div class = "side_pane_details_ava">
+                <div class = "circle">
+                  <p>C</p>
+                </div>
+              </div>
               <div class = "side_pane_details_text">
                 <div class = "side_pane_details_artname">Foule Ball</div>
                 <div class = "side_pane_details_username">Miles Morales</div>
               </div>
             </div>
             <div class = "side_pane_art_details">
-              <div class = "side_pane_details_ava">AVA</div>
+              <div class = "side_pane_details_ava">
+                <div class = "circle">
+                  <p>P</p>
+                </div>
+              </div>
               <div class = "side_pane_details_text">
                 <div class = "side_pane_details_artname">Clone conspiracy</div>
                 <div class = "side_pane_details_username">Peter Parker</div>
               </div>
             </div>
             <div class = "side_pane_art_details">
-              <div class = "side_pane_details_ava">AVA</div>
+              <div class = "side_pane_details_ava">
+                <div class = "circle">
+                  <p>C</p>
+                </div>
+              </div>
               <div class = "side_pane_details_text">
                 <div class = "side_pane_details_artname">Crisis on infinite earths</div>
                 <div class = "side_pane_details_username">Bruce Wayne</div>
@@ -206,21 +248,33 @@
           </div>
           <div class = "side_pane_content">
             <div class = "side_pane_art_details">
-              <div class = "side_pane_details_ava">AVA</div>
+              <div class = "side_pane_details_ava">
+                <div class = "circle">
+                  <p>T</p>
+                </div>
+              </div>
               <div class = "side_pane_details_text">
                 <div class = "side_pane_details_artname">Civil War 2</div>
                 <div class = "side_pane_details_username">Tony Stark</div>
               </div>
             </div>
             <div class = "side_pane_art_details">
-              <div class = "side_pane_details_ava">AVA</div>
+              <div class = "side_pane_details_ava">
+                <div class = "circle">
+                  <p>C</p>
+                </div>
+              </div>
               <div class = "side_pane_details_text">
                 <div class = "side_pane_details_artname">Guardian of the Galaxy</div>
                 <div class = "side_pane_details_username">Carol Danvers</div>
               </div>
             </div>
             <div class = "side_pane_art_details">
-              <div class = "side_pane_details_ava">AVA</div>
+              <div class = "side_pane_details_ava">
+                <div class = "circle">
+                  <p>K</p>
+                </div>
+              </div>
               <div class = "side_pane_details_text">
                 <div class = "side_pane_details_artname">Loss of Faith</div>
                 <div class = "side_pane_details_username">Kamala Khan</div>
@@ -239,8 +293,10 @@
             </div>
           </div>
           <div class = "side_pane_content">
-            <span>Anyone can write on Medium.</span>
-            <input type = "button" value = "Start writing"/>
+            <div class = "side_pane_text">
+              Anyone can write on Medium.
+            </div>
+            <input type = "button" class = "green_button" value = "Start writing"/>
           </div>
         </div>
         <div class = "side_pane">
