@@ -4,21 +4,31 @@ if(/Android|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent)){
   console.log("Desktop Browser in use.");
 }
 
-//scroll past header, fix the topic bar.
-
-//scroll past footer and lock side bar.
-  //scroll up again and unlock side bar.
-
 function login(){
-  //Login Page shows up.
+  //TODO:Login Page shows up.
 }
+
+/*
+  TODO: APPEND() USER DETAILS TOOL TIP TO NAMES AND AVA
+  CSS SELECTORS: 4 SELECTORS
+    .side_pane_details_ava
+    .side_pane_details_username
+    .feed_user_name
+    .feed_user_ava
+
+
+  FOR HOVER FEATURE
+*/
 
 function expandSearchBar(){
   var search = document.getElementById("expand");
-
   search.style.display = (search.style.display === "none") ? "inline-block" : "none";
+}
 
-  //make header rhs bigger.
+function closeSignupAd(){
+  $("#signup_ad").css({
+    display: "none"
+  });
 }
 
 $(document).ready(function(){
@@ -26,6 +36,16 @@ $(document).ready(function(){
   var headertopic = $("#header_topic").offset().top;
 
   var sidepanetop = $("#sidepanel").offset().top;
+
+  //TODO:
+  //UNCLICK FOR SEARCH BAR DOESN"T WORK AS EXPECTED
+  //DOESN"T APPLY FOR ALL SELECTORS
+  $("#maincontainer, #header_jumbotron, #header_topic").click(function(){
+    var search = document.getElementById("expand");
+    if(search.style.display === "inline-block"){
+        search.style.display = "none";
+    }
+  });
 
   $(window).scroll(function(){
     var currentScroll = $(window).scrollTop();
@@ -59,9 +79,4 @@ $(document).ready(function(){
       });
     }
   });
-
-
-
-
-
 });

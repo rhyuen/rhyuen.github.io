@@ -12,8 +12,10 @@
       <div class = "header_rightside">
         <span>Write a story</span>
         <span class = "signin_signup">Sign in / Sign up</span>
-        <span title = "Search Medium" onclick = "expandSearchBar()">&#x2315;</span>
-        <span id = "expand"><input type = "text" placeholder = "Search Medium" /></span>
+        <span id = "searchbutton" title = "Search Medium" onclick = "expandSearchBar()">&#x2315;</span>
+        <span id = "expand">
+          <input type = "text" placeholder = "Search Medium" />
+        </span>
       </div>
     </header>
     <div id = "header_topic">
@@ -43,7 +45,9 @@
           <div class = "feed_pane_user">
             <div class = "feed_user_ava"></div>
             <div class = "feed_user_details">
-              <div class = "feed_user_name">Black Panther</div>
+              <div class = "feed_user_name">Black Panther
+                <div class = "user_text">Black Panther</div>
+              </div>
               <div class = "feed_user_artdetails">
                 <span>2000 days ago</span> | <span>30 min read</span>
               </div>
@@ -283,11 +287,11 @@
           </div>
         </div>
 
-        <div class = "side_pane">
+        <div id = "signup_ad" class = "side_pane">
           <div class = "side_pane_header">
             <div class = "side_pane_header_title">Make Medium yours</div>
             <div class = "close_button">
-              <span>&times;</span>
+              <span onClick = "closeSignupAd()">&times;</span>
             </div>
           </div>
           <div class = "side_pane_content">
