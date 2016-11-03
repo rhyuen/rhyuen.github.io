@@ -5,13 +5,18 @@ html, body{
   background-color: #FAFAFA;
   width: 100%;
   height: 100%;
-  color: rgba(0,0,0,.44);
+  color: rgba(0,0,0, 0.44);
 }
+
 
 li{
   list-style: none;
   display: inline-block;
   padding: 0px 14px 0px 0px;
+}
+
+li:hover{
+  color: rgba(0,0,0, 0.8);
 }
 
 ul{
@@ -37,8 +42,14 @@ header{
   width: 20%;
 }
 
+.signin_signup{
+  color: #02b875;
+  font-weight: 500;
+  padding-left: 10%;
+}
 
-.expand{
+
+#expand{
   display: none;
 }
 
@@ -47,13 +58,14 @@ header{
   padding-right: 20%;
   border-bottom: 0.5px solid rgba(0,0,0, 0.1) ;
   background-color: white;
+  z-index: 2;
 }
 
 #header_jumbotron{
   margin-left: 20%;
   margin-right: 20%;
   height: 400px;
-  background-color: LightSlateGrey;
+  background-color: #FAFAFA;
 }
 
 .jumbotron_text{
@@ -82,12 +94,12 @@ header{
   padding-left: 20%;
   padding-right: 20%;
   display: table;
+  width: 60%;
 }
 
 #feedpanel{
   display: table-cell;
   width: 75%;
-
 }
 
 .feed_pane{
@@ -123,17 +135,18 @@ header{
 
 }
 
-.feed_pane_content{
-
+.feed_pane_content > h3{
+  color: black;
+  font-size: 29px;
 }
 
 .heart{
   color: #02b875;
-  font-size: 25px;  
 }
 
 .feed_pane_meta{
   position: relative;
+  line-height: 2;
 }
 
 .feed_pane_meta > span{
@@ -141,7 +154,6 @@ header{
 }
 
 .feed_meta_likes{
-
 }
 
 .feed_meta_responses{
@@ -152,16 +164,20 @@ header{
 .feed_meta_bookmark{
   position: absolute;
   right: 0%;
+  color: black;
+
 }
 
 #sidepanel{
+  width: 25%;
   vertical-align: top;
   font-size: 14px;
   display: table-cell;
+
 }
 
 .side_pane_header{
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -175,12 +191,11 @@ header{
   font-size: 18px;
   top: -10%;
   right: 5%;
-
 }
 
 .side_pane_content{
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 8%;
+  margin-bottom: 8%;
 }
 
 .side_pane_art_details{
