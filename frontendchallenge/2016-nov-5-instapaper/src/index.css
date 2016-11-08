@@ -1,5 +1,5 @@
 html, body{
-  background-color: pink;
+  background-color: white;
   font-family:  jaf-bernina-sans,"Helvetica Neue",Helvetica,Arial,sans-serif;
   height: 100%;
   width: 100%;
@@ -13,13 +13,26 @@ body{
   width: 60%;
 }
 
+a{
+  text-decoration: none;
+}
+
+.icon{
+  background-color: black;
+  color: black;
+}
+
+
 #nav_header{
+  background-color: white;
+  padding-top: 0.5%;
   width: 60%;
   height: 5%;
   position: fixed;
   display: table;
   top: 0;
-  background-color: gray;
+  font-size: 13px;
+  z-index: 2;
 }
 
 #logo, #search, #nav_rightside{
@@ -29,30 +42,55 @@ body{
 #logo{
   width: 20%;
   text-align: left;
-  background-color: green;
+}
+#logo div{
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 #logo a{
   font-size: 28px;
-  text-decoration: none;
-  background-color: white;
-  color: black
+  color: black;
 }
 
 #search{
   width: 60%;
   text-align: left;
   background-color: white;
+  border-bottom-color: gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
 }
 
-#search span input{
-  border: 0;
+
+
+#search div input{
+  border: none;
+  outline: none;
+  outline-width: 0;
   width: 40%;
   height: 100%;
+  font-size: 16px;
 }
 
 #nav_rightside{
   width: 20%;
-  text-align: right;
+  background-color: white;
+  border-bottom-color: gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+#nav_rightside div{
+  display: inline-block;
+  text-align: center;
+
+
+}
+#addlink{
+  width: 30%;
+}
+#user{
+  width: 70%;
 }
 
 #mid_container{
@@ -64,11 +102,36 @@ body{
 }
 
 #side_panel{
-  font-family: "Helvetica Neue";
-  display: table-cell;
+  padding-top: 1%;
+  font-family: "Helvetica";
+  font-weight: bold;
   width: 20%;
   background-color: rgba(0,0,0,0.4);
-  position: relative;
+  position: fixed;
+  top: 5%;
+  width: 12%;
+  height: 100%;
+  display: inline-block;
+}
+
+#side_panel ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+#side_panel ul li{
+  padding-bottom: 5%;
+}
+#side_panel ul li span{
+  width: 50px;
+  min-height: 20px;
+  background-color: black;
+}
+
+.divider{
+  background-color: black;
+  width: 50%;
+  height: 1px;
 }
 
 
@@ -85,7 +148,40 @@ body{
 }
 
 #main_frame{
-  display: table-cell;
-  background-color: rgba(0,1,0,0.7);
-  width:80%;
+  padding-top: 3%;
+  position: relative;
+  font-size: 16px;
+  top: 3%;
+  vertical-align: top;
+  width: 80%;
+  left: 20%;
+  background-color: white;
+}
+
+.post{
+  border-bottom-width: 0.5px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0,0,0, 0.1);
+  padding-bottom: 3%;
+}
+
+.post_social{
+  display: none;
+}
+
+.post_edit{
+  display: none;
+  font-size: 14px;
+  padding-left: 1%;
+  color: rgba(0,0,0,0.4);
+}
+.post:hover .post_edit{
+  display: inline-block;
+}
+
+.post:hover .post_social{
+  display: block;
+}
+.post:hover .post_meta{
+  display: none;
 }
