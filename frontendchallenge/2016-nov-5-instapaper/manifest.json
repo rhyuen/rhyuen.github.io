@@ -1,0 +1,16 @@
+{
+  "name": "Instapaper Clone",
+  "short_name": "Instapaper Clone",
+  "start_url": "/src/",
+  "icons": [
+    {
+      "src": "/icons/icon36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#FFFFFF",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
