@@ -3,6 +3,7 @@
   <head>
     <title>Instapaper Clone</title>
     <meta name = "apple-mobile-web-app-capable" content = "yes" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel = "stylesheet" href = "index.css" />
   </head>
   <body>
@@ -11,7 +12,7 @@
         <div><a href = "#">Instapaper</a></div>
       </div>
       <div id = "search">
-        <div><span class = "icon">0x2315</span><input type = "text" placeholder = "Search" /></div>
+        <div><span><i class="material-icons md-size">search</i></span><input type = "text" placeholder = "Search" /></div>
       </div>
       <div id = "nav_rightside">
         <div id = "addlink"><a href = "#">Add Link</a></div>
@@ -20,22 +21,26 @@
     </div>
     <div id = "side_panel">
       <ul id = "side_nav">
-        <li><span class = "icon">IOO</span><a href = "#">Home</a></li>
-        <li><span class = "icon">IOO</span><a href = "#">Liked</a></li>
-        <li><span class = "icon">IIO</span><a href = "#">Archive</a></li>
-        <li><span class = "icon">IIO</span><a href = "#">Notes</a></li>
-        <li><span class = "icon">IIO</span><a href = "#">Videos</a></li>
-        <li><span class = "icon">IIO</span><a href = "#">Browse</a></li>
+        <li><span><i class="material-icons md-size md-gray">home</i></span><a href = "#">Home</a></li>
+        <li><span><i class="material-icons md-size md-gray">favorite_border</i></span><a href = "#">Liked</a></li>
+        <li><span><i class="material-icons md-size md-gray">archive</i></span><a href = "#">Archive</a></li>
+        <li><span><i class="material-icons md-size md-gray">speaker_notes</i></span><a href = "#">Notes</a></li>
+        <li><span><i class="material-icons md-size md-gray">play_circle_outline</i></span><a href = "#">Videos</a></li>
+        <li><span><i class="material-icons md-size md-gray">chrome_reader_mode</i></span><a href = "#">Browse</a></li>
       </ul>
       <div class = "divider"></div>
       <ul id = "side_folders">
-        <li><span class = "icon">IIO</span><a href = "#">Add Folder</a><input type = "text" value = "New Folder"/></li>
+        <li id = "add_folder_button">
+          <span><i class="material-icons md-size md-gray">folder_open</i></span>
+          <a href = "#">Add Folder</a>
+          <input type = "text" value = "New Folder"/>
+        </li>
       </ul>
       <div id = "side_footer">
         <ul>
-          <li>Help</li>
-          <li>Blog</li>
-          <li>More</li>
+          <li><a href = "#">Help</a></li>
+          <li><a href ="#">Blog</a></li>
+          <li><a href = "#">More</a></li>
         </ul>
       </div>
     </div>
@@ -63,17 +68,13 @@
     <div id = "signup_page">
       <div id = "signup_form">
         <div id = "signup_topbar">
-          <div id = "signup_title">
-            Add a Link
-          </div>
-          <div class = "closebutton">
-
-          </div>
+          <div id = "signup_title">Add a Link</div>
+          <div class = "closebutton"><i class="material-icons">close</i></div>
         </div>
-      </div>
-      <div id = "signup_content">
-        <input type = "text" placeholder = "www.example.com/article.html"/>
-        <input type = "button" value = "Add" />
+        <div id = "signup_content">
+          <input type = "text" placeholder = "www.example.com/article.html"/>
+          <input type = "button" value = "Add" />
+        </div>
       </div>
     </div>
     <script src = "https://code.jquery.com/jquery-3.1.1.js" crossorigin="anonymous"></script>

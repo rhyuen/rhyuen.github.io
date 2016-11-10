@@ -13,8 +13,23 @@ body{
   width: 60%;
 }
 
+.material-icons.md-size{
+  font-size: 16px;
+  padding-right: 2%;
+}
+.material-icons.md-gray{
+  color: #7a7a7a;
+}
+
 a{
   text-decoration: none;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #0074bf;
 }
 
 .icon{
@@ -104,9 +119,8 @@ a{
 #side_panel{
   padding-top: 1%;
   font-family: "Helvetica";
-  font-weight: bold;
   width: 20%;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.1);
   position: fixed;
   top: 5%;
   width: 12%;
@@ -125,7 +139,13 @@ a{
 #side_panel ul li span{
   width: 50px;
   min-height: 20px;
-  background-color: black;
+}
+
+#add_folder_button span{
+  display: none;
+}
+#add_folder_button input{
+  display: none;
 }
 
 .divider{
@@ -136,7 +156,7 @@ a{
 
 
 #side_footer{
-  background-color: red;
+  background-color: pink;
   bottom: 5%;
   left: 0%;
   width: 100%;
@@ -145,6 +165,7 @@ a{
 
 #side_footer ul li{
   display: inline-block;
+  font-size: 13px;
 }
 
 #main_frame{
@@ -187,9 +208,10 @@ a{
 
 .post_edit{
   display: none;
-  font-size: 14px;
+  font-size: 11px;
   padding-left: 1%;
   color: rgba(0,0,0,0.4);
+  font-family: Helvetica;
 }
 .post:hover .post_edit{
   display: inline-block;
@@ -211,4 +233,13 @@ a{
   width: 0%;
   height: 100%;
   z-index: 3;
+}
+
+#signup_form{
+  background-color: white;
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  width: 40%;
+  height: 20%;
 }
