@@ -49,11 +49,11 @@ $(document).ready(function(){
     return(
       $("<div/>", {class: "post"})
         .append($("<div/>", {class: "post_title"})
-        .append($("<div/>", {text: title})
+        .append($("<div/>", {class: "post_link_title", text: title})
         .append($("<span/>", {class:"post_edit"})
         .append($("<a/>", {href: "#", text: "Edit"})
       )))
-        .append($("<div/>", {class: "post_author", text: source + " * " + author})
+        .append($("<div/>", {class: "post_author", text: source + " by " + author})
       ))
         .append($("<div/>", {class: "post_content", text: preview}))
         .append($("<div/>", {class: "post_bottom"})

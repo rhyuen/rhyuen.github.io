@@ -20,6 +20,16 @@ body{
 .material-icons.md-gray{
   color: #7a7a7a;
 }
+.material-icons.arrow{
+  position: relative;
+  top: 3px;
+}
+.material-icons:hover{
+  color: #0074bf;
+}
+
+
+
 
 a{
   text-decoration: none;
@@ -77,8 +87,6 @@ a:hover{
   border-bottom-width: 1px;
 }
 
-
-
 #search div input{
   border: none;
   outline: none;
@@ -104,9 +112,23 @@ a:hover{
 #addlink{
   width: 30%;
 }
-#user{
-  width: 70%;
+#username{
+  background-color: pink;
 }
+
+#username > a{
+  position: relative;
+}
+#username .dropdown{
+  position: absolute;
+  display: none;
+  z-index: 900;
+  height: 300px;
+  width: 50px;
+  background-color: white;
+}
+
+
 
 #mid_container{
   display: table;
@@ -117,7 +139,7 @@ a:hover{
 }
 
 #side_panel{
-  padding-top: 1%;
+  padding-top: 1.5%;
   font-family: "Helvetica";
   width: 20%;
   background-color: rgba(0,0,0,0.1);
@@ -137,20 +159,33 @@ a:hover{
   padding-bottom: 5%;
 }
 #side_panel ul li span{
-  width: 50px;
   min-height: 20px;
 }
 
-#add_folder_button span{
-  display: none;
+#add_folder_button{
+  padding-top: 5%;
+  width: 80%;
+}
+
+#add_folder_button span *{
+  display: hidden;
 }
 #add_folder_button input{
   display: none;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  outline:none;
+  width: 80%;
+}
+
+#add_folder_button input:focus{
+  padding: 2px;
+
 }
 
 .divider{
-  background-color: black;
-  width: 50%;
+  background-color: rgba(0,0,0,0.1);
+  width: 60%;
   height: 1px;
 }
 
@@ -183,28 +218,29 @@ a:hover{
   border-bottom-width: 0.5px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0,0,0, 0.1);
+  padding-top: 3%;
   padding-bottom: 3%;
   line-height: 1.44;
   font-family: LyonText,Georgia,serif;
   font-size: 15px;
 }
 
-.post_author{
-  color: #7a7a7a;
-}
+.post_link_title{font-size: 20px;}
+.post_author{color: #7a7a7a;}
 
 .post_bottom{
   padding-top: 1%;
+
   font-size: 12px;
 }
 
 .post_meta{
   color: #7a7a7a;
+  font-family: jaf-bernina-sans;
+  padding-bottom: 4px;
 }
 
-.post_social{
-  display: none;
-}
+.post_social{display: none;}
 
 .post_edit{
   display: none;
