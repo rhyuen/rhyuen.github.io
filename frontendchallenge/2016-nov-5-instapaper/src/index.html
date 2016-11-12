@@ -44,7 +44,9 @@
         <li><span><i class="material-icons md-size md-gray">play_circle_outline</i></span><a href = "#">Videos</a></li>
         <li><span><i class="material-icons md-size md-gray">chrome_reader_mode</i></span><a href = "#">Browse</a></li>
       </ul>
+
       <div class = "divider"></div>
+
       <ul id = "side_folders">
         <li id = "add_folder_button">
           <span><i class="material-icons md-size md-gray">folder_open</i></span>
@@ -52,23 +54,26 @@
           <input type = "text" value = "New Folder"/>
         </li>
       </ul>
+
       <div id = "side_footer">
-        <ul>
-          <li><a href = "#">Help</a></li>
-          <li><a href ="#">Blog</a></li>
-          <li><a href = "#">More <i class = "material-icons md-gray md-size arrow">arrow_drop_up</i></a></li>
-        </ul>
+        <div id = "side_footer_horiz_content">
+          <ul>
+            <li><a href = "#">Help</a></li>
+            <li><a href ="#">Blog</a></li>
+            <li id = "side_footer_dropdown_button"><a href = "#">More <i class = "material-icons md-gray md-size arrow">arrow_drop_up</i></a></li>
+          </ul>
+        </div>
         <div class = "dropdown">
           <ul>
-            <li>Apps</li>
-            <li>How to Save</li>
-            <li>Premium</li>
-            <li>API</li>
-            <li>Press</li>
-            <li>Publishers</li>
-            <li>Privacy & Terms</li>
-            <li>Twitter</li>
-            <li>Facebook</li>
+            <li><a href = "#">Apps</a></li>
+            <li><a href = "#">How to Save</a></li>
+            <li><a href = "#">Premium</a></li>
+            <li><a href = "#">API</a></li>
+            <li><a href = "#">Press</a></li>
+            <li><a href = "#">Publishers</a></li>
+            <li class = "bottom_line_divider"><a href = "#">Privacy & Terms</a></li>
+            <li><a href = "#">Twitter</a></li>
+            <li><a href = "#">Facebook</a></li>
           </ul>
         </div>
       </div>
@@ -98,11 +103,13 @@
       <div id = "signup_form">
         <div id = "signup_topbar">
           <div id = "signup_title">Add a Link</div>
-          <div class = "closebutton"><i class="material-icons">close</i></div>
+          <div class = "closebutton"><i class="material-icons md-gray">close</i></div>
         </div>
         <div id = "signup_content">
-          <input type = "text" placeholder = "www.example.com/article.html"/>
-          <input type = "button" value = "Add" />
+          <form>
+            <input type = "text" placeholder = "www.example.com/article.html"/>
+            <input type = "button" value = "Add" />
+          </form>
         </div>
       </div>
     </div>

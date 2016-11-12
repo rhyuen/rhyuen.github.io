@@ -91,6 +91,14 @@ $("#username_dropdown_button").click(function(){
   }
 });
 
+$("#side_footer_dropdown_button").click(function(){
+  if($("#side_footer .dropdown").css("display") === "block"){
+    $("#side_footer .dropdown").css({display: "none"})
+  }else{
+    $("#side_footer .dropdown").css({display: "block"});
+  }
+});
+
 
 
 $("#addlink").click(function(){

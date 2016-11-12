@@ -125,6 +125,7 @@ a:hover{
   background-color: white;
   border: 1px solid rgba(0,0,0,0.2);
   border-radius: 5px;
+  font-size: 12px;
   box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
 }
 #username .dropdown ul{
@@ -132,35 +133,12 @@ a:hover{
   padding-left: 0;
 }
 #username .dropdown ul li{
-  padding: 8% 0% 8% 5%;
+  padding: 4% 0% 4% 5%;
   margin-left: 5%;
   margin-right: 5%;
 }
 .bottom_line_divider{
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-#side_footer > .dropdown{
-  position: absolute;
-  display: none;
-  z-index: 10;
-  width: 100%;
-  bottom: 10%;
-  text-align: left;
-  background-color: white;
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
-}
-#side_footer > .dropdown ul{
-  list-style: none;
-  padding-left: 0;
-}
-
-#side_footer > .dropdown ul li{
-  padding: 8% 0% 8% 5%;
-  margin-left: 5%;
-  margin-right: 5%;
 }
 
 
@@ -216,7 +194,6 @@ a:hover{
 
 #add_folder_button input:focus{
   padding: 2px;
-
 }
 
 .divider{
@@ -227,17 +204,45 @@ a:hover{
 
 
 #side_footer{
-  background-color: pink;
-  bottom: 5%;
+  bottom: 6%;
   left: 0%;
   width: 100%;
   position: absolute;
 }
 
-#side_footer ul li{
+#side_footer_horiz_content ul li{
   display: inline-block;
+  padding-right: 5%;
   font-size: 13px;
 }
+
+
+#side_footer > .dropdown{
+  position: absolute;
+  display: none;
+  z-index: 10;
+  width: 90%;
+  bottom: 100%;
+  text-align: left;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
+}
+#side_footer > .dropdown ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+#side_footer > .dropdown ul li{
+  padding: 4% 0% 4% 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: block;
+  font-size: 12px;
+  font-weight: lighter;;
+}
+
 
 #main_frame{
   padding-top: 3%;
@@ -298,10 +303,10 @@ a:hover{
 
 #signup_page{
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  display: none;
   width: 0%;
   height: 100%;
   z-index: 3;
@@ -310,8 +315,50 @@ a:hover{
 #signup_form{
   background-color: white;
   position: absolute;
-  top: 33%;
+  border-radius: 5px 5px 5px 5px;
+  top: 40%;
   left: 33%;
-  width: 40%;
-  height: 20%;
+  width: 33%;
+  height: 15%;
+  font-size: 18px;
+}
+
+#signup_topbar{
+  height: 40%;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+#signup_topbar #signup_title{
+  position: absolute;
+  top: 40%;
+  left: 2%;
+}
+#signup_topbar .closebutton{
+  position: absolute;
+  top: 25%;
+  right: 2%;
+}
+
+#signup_content{
+  height: auto;
+}
+#signup_content form{
+  padding: 3% 2% 5% 2%;
+}
+#signup_content form input[type=text]{
+  width: 75%;
+  padding: 2% 2%;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid rgba(0,0,0,0.4);
+}
+#signup_content form input[type=button]{
+  width: 16%;
+  padding: 2% 5%;
+  right: 0;
+  background-color: black;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: none;
 }
