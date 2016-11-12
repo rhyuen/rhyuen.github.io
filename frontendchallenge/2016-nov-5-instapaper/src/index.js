@@ -1,5 +1,12 @@
 console.log("[%s] Instapaper Clone", new Date().toLocaleString());
 
+if(/Android|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent)){
+  console.log("Mobile Browser in use. Redirect to mobile site.");
+}else{
+  console.log("Desktop Browser in use.");
+}
+
+
 var posts = [
   {
     title: "Docker is the beest",
@@ -32,6 +39,14 @@ var posts = [
     preview: "Isn't it cool how things are amazing sometimes.  LIke really amazing.  Both amazing things are good and bad.  Amazing times abound.  Someimtes the sky is blue.  Do you know why?  It's because of rayleigh scattering.  I think that's he reason.  The premise of what I just said is probalby not entirely correct however.  It's amazing how the memory fades.  For some people, I hear, it isn't quite like that.  I guess that's both fortunate and unfortunate as with nearly everything. Can you believe it, twitter doesn't seem to have much an idea as to what it wants to be.  It has been around forever too.  It's a fantastic way for celebrities and famous people of sorts to communicate with the public in a rather direct fashion.",
     date: "9765 days ago",
     read: "5 min"
+  },
+  {
+    title: "Spectacular",
+    source: "spectarularspidersapm",
+    author: "Petoria Parkaria",
+    preview: "All those closes are abound.  They becomes zombies.  I end up making a zombie apocalypse happening.",
+    date: "365 days from now",
+    read: "1 min"
   }
 ];
 
@@ -67,6 +82,16 @@ $(document).ready(function(){
         );
   }
 });
+
+$("#username_dropdown_button").click(function(){
+  if($("#username > .dropdown").css("display") === "block"){
+    $("#username > .dropdown").css({display: "none"});
+  }else{
+   $("#username > .dropdown").css({display: "block"});
+  }
+});
+
+
 
 $("#addlink").click(function(){
   $("#signup_page").css({width: "100%", display: "block"});
