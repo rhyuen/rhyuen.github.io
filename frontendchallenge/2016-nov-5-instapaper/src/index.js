@@ -58,7 +58,13 @@ $(document).ready(function(){
       makePost(post.title, post.source, post.author, post.preview, post.date, post.read));
   });
 
-
+  $(".post_link_title > .post_edit").click(function(event){
+    console.log($(this).parent().text().trim());
+    $("#edit_link_page").css({display: "block"});
+    $("#edit_form_title").val($(this).parent().text().trim());  
+    $("#edit_form_link").val($(this).parent().siblings().text());
+    $("#edit_form_summary").val($(this).parent().parent().siblings().text());
+  });
 
   function makePost(title, source, author, preview, date, read){
     return(
@@ -74,29 +80,52 @@ $(document).ready(function(){
         .append($("<div/>", {class: "post_bottom"})
           .append($("<div/>", {class: "post_meta", text: date + " * "  + read}))
           .append($("<div/>", {class: "post_social"})
-            .append($("<i/>", {class: "material-icons md-size md-gray", text: "favorite_border"}))
-            .append($("<i/>", {class: "material-icons md-size md-gray", text: "folder_open"}))
-            .append($("<i/>", {class: "material-icons md-size md-gray", text: "archive"}))
-            .append($("<i/>", {class: "material-icons md-size md-gray", text: "delete_forever"}))
-            .append($("<i/>", {class: "material-icons md-size md-gray", text: "share"}))))
+            .append($("<i/>", {class: "material-icons md-size md-gray", text: "favorite_border", title: "Like"}))
+            .append($("<i/>", {class: "material-icons md-size md-gray", text: "folder_open", title: "Move"}))
+            .append($("<i/>", {class: "material-icons md-size md-gray", text: "archive", title: "Archive"}))
+            .append($("<i/>", {class: "material-icons md-size md-gray", text: "delete_forever", title: "Delete Forever"}))
+            .append($("<i/>", {class: "material-icons md-size md-gray", text: "share", title: "Share..."}))))
         );
   }
+
+
+
+
 });
 
-$("#username_dropdown_button").click(function(){
-  if($("#username > .dropdown").css("display") === "block"){
-    $("#username > .dropdown").css({display: "none"});
-  }else{
-   $("#username > .dropdown").css({display: "block"});
-  }
+
+$("#username > .dropdown").click(function(event){
+  event.stopPropagation();
 });
 
-$("#side_footer_dropdown_button").click(function(){
-  if($("#side_footer .dropdown").css("display") === "block"){
-    $("#side_footer .dropdown").css({display: "none"})
-  }else{
-    $("#side_footer .dropdown").css({display: "block"});
-  }
+$("#side_footer > .dropdown").click(function(event){
+  event.stopPropagation();
+});
+
+$("#username_dropdown_button").click(function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  $("#username > .dropdown").css({display: "block"});
+});
+
+$("#side_footer_dropdown_button").click(function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  $("#side_footer > .dropdown").css({display: "block"});
+});
+
+$(document).click(function(){
+  $("#username > .dropdown").css({display: "none"});
+  $("#side_footer .dropdown").css({display: "none"});
+});
+
+
+
+$("#signup_topbar .closebutton").click(function(){
+  $("#signup_page").css({display: "none"});
+});
+$("#edit_topbar .closebutton").click(function(){
+  $("#edit_link_page").css({display: "none"});
 });
 
 
@@ -110,10 +139,3 @@ $("#add_folder_button").click(function(){
   $("#add_folder_button span").css({display: "inline-block"});
   $("#add_folder_button input").css({display: "inline-block"});
 });
-
-
-
-// $("*").not($("#addlink")).click(function(){
-//   if($("#signup_page").width() === "100%"))
-//     $("$signup_page").css({width: "0%"});
-// });

@@ -28,9 +28,6 @@ body{
   color: #0074bf;
 }
 
-
-
-
 a{
   text-decoration: none;
   color: #7a7a7a;
@@ -271,7 +268,6 @@ a:hover{
 
 .post_bottom{
   padding-top: 1%;
-
   font-size: 12px;
 }
 
@@ -356,6 +352,75 @@ a:hover{
   width: 16%;
   padding: 2% 5%;
   right: 0;
+  background-color: black;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: none;
+}
+
+#edit_link_page{
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 4;
+}
+
+#edit_link_form{
+  position: absolute;
+  top: 25%;
+  left: 33%;
+  width: 33%;
+  height: 50%;
+  background-color: white;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#edit_topbar{
+  height: 15%;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  position: relative;
+}
+
+#edit_topbar > #edit_title{
+  position: absolute;
+  top: 40%;
+  left: 2%;
+}
+
+#edit_topbar .closebutton{
+  position: absolute;
+  top: 20%;
+  right: 2%;
+}
+
+#edit_content form{
+  padding: 3% 5% 5% 5%;
+}
+
+#edit_content .edit_form_row{
+  width: 100%;
+  padding-bottom: 2%;
+}
+#edit_content form input[type=text]{
+  width: 75%;
+  padding: 2% 2%;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid rgba(0,0,0,0.4);
+}
+#edit_content form textarea{
+  width: 70%;
+}
+
+#edit_content form input[type=button]{
+  padding: 2% 5%;
+  float: right;
   background-color: black;
   color: white;
   border-radius: 5px 5px 5px 5px;

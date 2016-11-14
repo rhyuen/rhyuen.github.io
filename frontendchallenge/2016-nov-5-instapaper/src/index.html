@@ -72,8 +72,8 @@
             <li><a href = "#">Press</a></li>
             <li><a href = "#">Publishers</a></li>
             <li class = "bottom_line_divider"><a href = "#">Privacy & Terms</a></li>
-            <li><a href = "#">Twitter</a></li>
-            <li><a href = "#">Facebook</a></li>
+            <li><a href = "https://www.twitter.com" target = "_blank">Twitter</a></li>
+            <li><a href = "https://www.facebook.com" target = "_blank">Facebook</a></li>
           </ul>
         </div>
       </div>
@@ -82,7 +82,11 @@
     <div id = "main_frame">
       <div class = "post">
         <div class = "post_title">
-          <div class = "post_link_title">Post Title<span class = "post_edit"><a href = "#">edit</a></span></div>
+          <div class = "post_link_title">Post Title
+            <span class = "post_edit">
+              <a href = "#">Edit</a>
+            </span>
+          </div>
           <div class = "post_author">Source Url and Author</div>
         </div>
         <div class = "post_content">
@@ -93,7 +97,11 @@
             Relative Time * N min read.
           </div>
           <div class="post_social">
-            <i class="material-icons md-size md-gray">favorite_border</i><i class="material-icons md-size md-gray">folder_open</i><i class="material-icons md-size md-gray">archive</i><i class="material-icons md-size md-gray">delete_forever</i><i class="material-icons md-size md-gray">share</i>
+            <i class="material-icons md-size md-gray">favorite_border</i>
+            <i class="material-icons md-size md-gray">folder_open</i>
+            <i class="material-icons md-size md-gray">archive</i>
+            <i class="material-icons md-size md-gray">delete_forever</i>
+            <i class="material-icons md-size md-gray">share</i>
           </div>
         </div>
       </div>
@@ -106,9 +114,36 @@
           <div class = "closebutton"><i class="material-icons md-gray">close</i></div>
         </div>
         <div id = "signup_content">
-          <form>
+          <form action = "/api/post" method = "post">
             <input type = "text" placeholder = "www.example.com/article.html"/>
             <input type = "button" value = "Add" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id = "edit_link_page">
+      <div id = "edit_link_form">
+        <div id = "edit_topbar">
+          <div id = "edit_title">Edit Bookmark</div>
+          <div class = "closebutton">
+            <i class = "material-icons md-gray">close</i>
+          </div>
+        </div>
+        <div id = "edit_content">
+          <form action = "/api/post" method = "put">
+            <div class = "edit_form_row">
+              <label>Title</label><input type = "text" id = "edit_form_title"/>
+            </div>
+            <div class = "edit_form_row">
+              <label>Link</label><input type = "text" id = "edit_form_link"/>
+            </div>
+            <div class = "edit_form_row">
+              <label>Summary</label>
+              <textarea id = "edit_form_summary" rows = "5" value = "Link Summary"></textarea>
+            </div>
+
+            <input type = "button" value = "Save Changes" />
           </form>
         </div>
       </div>
