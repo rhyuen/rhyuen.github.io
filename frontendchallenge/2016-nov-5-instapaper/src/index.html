@@ -133,17 +133,30 @@
         <div id = "edit_content">
           <form action = "/api/post" method = "put">
             <div class = "edit_form_row">
-              <label>Title</label><input type = "text" id = "edit_form_title"/>
+              <div class = "edit_label">
+                <label>Title</label>
+              </div>
+              <div class = "edit_input">
+                <input type = "text" id = "edit_form_title"/>
+              </div>
             </div>
             <div class = "edit_form_row">
-              <label>Link</label><input type = "text" id = "edit_form_link"/>
+              <div class = "edit_label">
+                <label>Link</label>
+              </div>
+              <div class = "edit_input">
+                <input type = "text" id = "edit_form_link"/>
+              </div>
             </div>
             <div class = "edit_form_row">
-              <label>Summary</label>
-              <textarea id = "edit_form_summary" rows = "5" value = "Link Summary"></textarea>
+              <div class = "edit_label">
+                <label>Summary</label>
+              </div>
+              <div class = "edit_input">
+                <textarea id = "edit_form_summary" rows = "5" value = "Link Summary"></textarea>
+              </div>
             </div>
-
-            <input type = "button" value = "Save Changes" />
+            <input type = "submit" value = "Save Changes" />
           </form>
         </div>
       </div>

@@ -364,6 +364,7 @@ a:hover{
   position: fixed;
   width: 100%;
   height: 100%;
+  font-size: 18px;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
@@ -375,7 +376,7 @@ a:hover{
   top: 25%;
   left: 33%;
   width: 33%;
-  height: 50%;
+  height: 43%;
   background-color: white;
   border-radius: 5px 5px 5px 5px;
 }
@@ -391,39 +392,64 @@ a:hover{
 #edit_topbar > #edit_title{
   position: absolute;
   top: 40%;
-  left: 2%;
+  left: 5%;
 }
 
 #edit_topbar .closebutton{
   position: absolute;
-  top: 20%;
+  top: 30%;
   right: 2%;
+}
+#edit_content{
+  width: 100%;
+  height: 100%;
 }
 
 #edit_content form{
-  padding: 3% 5% 5% 5%;
+  padding: 5% 7% 5% 5%;
 }
 
 #edit_content .edit_form_row{
   width: 100%;
-  padding-bottom: 2%;
+  padding-bottom: 3%;
+  display: table;
 }
-#edit_content form input[type=text]{
+#edit_content .edit_label{
+  display: table-cell;
+  width: 25%;
+  vertical-align: top;
+}
+#edit_content .edit_input{
+  display: table-cell;
   width: 75%;
+}
+
+#edit_content form input[type=text]{
+  width: 100%;
   padding: 2% 2%;
+  font-size: 18px;
   border-radius: 5px 5px 5px 5px;
   border: 1px solid rgba(0,0,0,0.4);
 }
 #edit_content form textarea{
-  width: 70%;
+  width: 100%;
+  padding: 2% 2%;
+  font-size: 18px;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid rgba(0,0,0,0.4);
 }
 
-#edit_content form input[type=button]{
+#edit_content form input[type=submit]{
   padding: 2% 5%;
+  font-size: 16px;
+  font-family: Helvetica;
   float: right;
+  position: relative;
+  left: 3%;
   background-color: black;
   color: white;
   border-radius: 5px 5px 5px 5px;
   outline: none;
   border: none;
+
 }
