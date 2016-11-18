@@ -16,6 +16,7 @@ body{
 .material-icons.md-size{
   font-size: 16px;
   padding-right: 2%;
+
 }
 .material-icons.md-gray{
   color: #7a7a7a;
@@ -139,8 +140,6 @@ a:hover{
 }
 
 
-
-
 #mid_container{
   display: table;
   width: 60%;
@@ -151,14 +150,13 @@ a:hover{
 
 #side_panel{
   padding-top: 1.5%;
-  font-family: "Helvetica";
   width: 20%;
-  background-color: rgba(0,0,0,0.1);
+  /*background-color: rgba(0,0,0,0.1);*/
   position: fixed;
   top: 5%;
   width: 12%;
   height: 100%;
-  display: inline-block;
+
 }
 
 #side_panel ul{
@@ -167,34 +165,53 @@ a:hover{
 }
 
 #side_panel ul li{
-  padding-bottom: 5%;
+  padding-bottom: 6%;
 }
-#side_panel ul li span{
-  min-height: 20px;
+
+#side_panel ul li a{
+  font-size: 15px;
+  font-weight: Bold;
+  font-family: Helvetica;
+  padding-left: 5%;
+}
+
+#side_folders{
+  height: 50%;
+  overflow-y: auto;
 }
 
 #add_folder_button{
-  padding-top: 5%;
   width: 80%;
 }
-
-#add_folder_button span *{
-  display: hidden;
+#add_folder_text{
+    color: rgba(0,0,0,0.4);
 }
+
+#hidden_folder_icon > i{
+  visibility: hidden;
+}
+
 #add_folder_button input{
   display: none;
   background-color: rgba(0,0,0,0);
+  padding: 3%;
   border: none;
   outline:none;
-  width: 80%;
+  width: 50%;
+}
+#add_folder_button input:focus{
+  border: 1px solid #0074bf;
+  border-radius: 5px;
+
+}
+#hidden_folder_input:focus #hidden_folder_icon > i {
+  color: #0074bf;
 }
 
-#add_folder_button input:focus{
-  padding: 2px;
-}
+
 
 .divider{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.15);
   width: 60%;
   height: 1px;
 }
@@ -205,6 +222,7 @@ a:hover{
   left: 0%;
   width: 100%;
   position: absolute;
+  background-color: white;
 }
 
 #side_footer_horiz_content ul li{
@@ -277,7 +295,10 @@ a:hover{
   padding-bottom: 4px;
 }
 
-.post_social{display: none;}
+.post_social{
+  display: none;
+  position: relative;
+}
 
 .post_edit{
   display: none;
@@ -295,6 +316,28 @@ a:hover{
 }
 .post:hover .post_meta{
   display: none;
+}
+
+.post .folder_dropdown{
+  position: absolute;
+  background-color: white;
+  display: none;
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 1px 4px 2px rgba(0,0,0,0.2);
+  font-family: Helvetica;
+  border-radius: 5px 5px 5px 5px;
+  padding: 0% 2% 0% 2%;
+  max-height: 40%;
+  overflow-y: auto;
+  width: 20%;
+  z-index: 5;
+}
+.post .folder_dropdown ul{
+  padding-left: 0%;
+}
+.post .folder_dropdown ul li{
+  list-style: none;
+  padding-bottom: 5%;
 }
 
 #signup_page{
@@ -360,7 +403,7 @@ a:hover{
 }
 
 #edit_link_page{
-  display: block;
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;

@@ -2,6 +2,7 @@ console.log("[%s] Instapaper Clone", new Date().toLocaleString());
 
 if(/Android|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent)){
   console.log("Mobile Browser in use. Redirect to mobile site.");
+  //Add Element Denoting Desktop site usage.
 }else{
   console.log("Desktop Browser in use.");
 }
@@ -61,9 +62,34 @@ $(document).ready(function(){
   $(".post_link_title > .post_edit").click(function(event){
     console.log($(this).parent().text().trim());
     $("#edit_link_page").css({display: "block"});
-    $("#edit_form_title").val($(this).parent().text().trim());  
+    $("#edit_form_title").val($(this).parent().text().trim());
     $("#edit_form_link").val($(this).parent().siblings().text());
     $("#edit_form_summary").val($(this).parent().parent().siblings().text());
+  });
+
+  //Share Dropdown Listener.
+  $(".post_social > i:contains('folder_open')").click(function(event){
+    console.log("Folder popup listener check.");
+    var folderDropdown = $(this).parent().parent();
+
+    console.log(folderDropdown);
+
+    var dd_container = $("<div/>", {class: "folder_dropdown"})
+      .append($("<ul/>")
+      .append($("<li/>", {text: "MOVE"})));
+
+      //Get Dynamically Later
+      var folders = ["Deadpool", "Superman", "Batman", "Prowler", "Thor"];
+
+      folders.map(function(name){
+        dd_container
+          .append($("<li/>")
+          .append($("<span/>")
+          .append($("<i/>", {class: "material-icons md-size md-gray", text: "folder_open"}))
+          .append($("<a/>", {href: "#", text: name}))));
+      });
+
+      folderDropdown.append(dd_container);
   });
 
   function makePost(title, source, author, preview, date, read){
@@ -114,6 +140,7 @@ $("#side_footer_dropdown_button").click(function(event){
   $("#side_footer > .dropdown").css({display: "block"});
 });
 
+//RESET DOM
 $(document).click(function(){
   $("#username > .dropdown").css({display: "none"});
   $("#side_footer .dropdown").css({display: "none"});
@@ -134,8 +161,31 @@ $("#addlink").click(function(){
   $("#signup_page").css({width: "100%", display: "block"});
 });
 
+
+
+//Turns Add New Folder DOM Elements on.
 $("#add_folder_button").click(function(){
   $("#add_folder_button a").css({display: "none"});
-  $("#add_folder_button span").css({display: "inline-block"});
+  $("#hidden_folder_icon > i").css({visibility: "visible"});
   $("#add_folder_button input").css({display: "inline-block"});
+  $("#hidden_folder_input").focus();
+
+});
+
+
+
+$("#new_folder_form").submit(function(){
+  if($("#hidden_folder_input").val() === "")
+    return;
+  $("#side_folders")
+    .prepend($("<li/>")
+    .append($("<span/>")
+    .append($("<i/>", {class: "material-icons md-size md-gray", text: "folder_open"}))
+    .append($("<a/>", {text: $("#hidden_folder_input").val()}))));
+  $("#hidden_folder_input").val("");
+
+  //Turns features off after having them turned on.
+  $("#add_folder_button a").css({display: "inline-block"});
+  $("#hidden_folder_icon > i").css({visibility: "hidden"});
+  $("#add_folder_button input").css({display: "none"});
 });

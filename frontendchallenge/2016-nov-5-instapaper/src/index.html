@@ -9,7 +9,7 @@
   <body>
     <div id = "nav_header">
       <div id = "logo">
-        <div><a href = "#">Instapaper</a></div>
+        <div><a href = "http://localhost:3000/frontendchallenge/2016-nov-5-instapaper/src/index.html">Instapaper</a></div>
       </div>
       <div id = "search">
         <div><span><i class="material-icons md-size">search</i></span><input type = "text" placeholder = "Search" /></div>
@@ -48,10 +48,19 @@
       <div class = "divider"></div>
 
       <ul id = "side_folders">
+        <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Deadpool</a></li>
+        <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Superman</a></li>
+        <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Batman</a></li>
+        <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Prowler</a></li>
+        <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Thor</a></li>
         <li id = "add_folder_button">
-          <span><i class="material-icons md-size md-gray">folder_open</i></span>
-          <a href = "#">Add Folder</a>
-          <input type = "text" value = "New Folder"/>
+          <form id = "new_folder_form">
+            <span id = "hidden_folder_icon">
+              <i class="material-icons md-size md-gray">folder_open</i>
+            </span>
+            <a id = "add_folder_text" href = "#">Add Folder</a>
+            <input id = "hidden_folder_input" type = "text" maxlength = "15" placeholder = "New Folder"/>
+          </form>
         </li>
       </ul>
 
@@ -102,6 +111,16 @@
             <i class="material-icons md-size md-gray">archive</i>
             <i class="material-icons md-size md-gray">delete_forever</i>
             <i class="material-icons md-size md-gray">share</i>
+          </div>
+          <div class = "folder_dropdown">
+            <ul>
+              <li>MOVE</li>
+              <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Deadpool</a></li>
+              <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Superman</a></li>
+              <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Batman</a></li>
+              <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Prowler</a></li>
+              <li><span><i class="material-icons md-size md-gray">folder_open</i></span><a href = "#">Thor</a></li>
+            </ul>
           </div>
         </div>
       </div>
