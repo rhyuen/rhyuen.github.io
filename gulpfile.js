@@ -1,5 +1,15 @@
 var gulp = require("gulp");
+var imagemin = require("gulp-imagemin");
+var rename = require("gulp-rename");
 var browserSync = require("browser-sync").create();
+
+
+gulp.task("image-minify", function(){
+  return gulp.src("images/**/*.jpg")
+    .pipe(imagemin())
+    .pipe(rename({suffix: ".min"}))
+    .pipe(gulp.dest("dist"));
+});
 
 gulp.task("browser-sync", function(){
   browserSync.init({
