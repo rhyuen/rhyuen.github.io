@@ -59,6 +59,7 @@ $(document).ready(function(){
       makePost(post.title, post.source, post.author, post.preview, post.date, post.read));
   });
 
+  //POST - TITLE - EDIT LINK
   $(".post_link_title > .post_edit").click(function(event){
     console.log($(this).parent().text().trim());
     $("#edit_link_page").css({display: "block"});
@@ -67,29 +68,38 @@ $(document).ready(function(){
     $("#edit_form_summary").val($(this).parent().parent().siblings().text());
   });
 
-  //Share Dropdown Listener.
+  //POST - SOCIAL - MOVE TO FOLDER DROPDOWN
   $(".post_social > i:contains('folder_open')").click(function(event){
-    console.log("Folder popup listener check.");
-    var folderDropdown = $(this).parent().parent();
 
-    console.log(folderDropdown);
+    var folderDropdown = $(this).parent().parent().find(".folder_dropdown")
 
-    var dd_container = $("<div/>", {class: "folder_dropdown"})
-      .append($("<ul/>")
-      .append($("<li/>", {text: "MOVE"})));
+    //PREVENTS ADDING FOLDER NAMES MULTIPLE TIMES
+    if(folderDropdown.css("display") === "block"){
+      return;
+    }
 
-      //Get Dynamically Later
-      var folders = ["Deadpool", "Superman", "Batman", "Prowler", "Thor"];
+    //MAKE FOLDER DROPDOWN VISIBLE
+    folderDropdown.css({"display": "block"});
+    var folderDropdownMountPoint = folderDropdown.find("ul");
 
-      folders.map(function(name){
-        dd_container
-          .append($("<li/>")
-          .append($("<span/>")
-          .append($("<i/>", {class: "material-icons md-size md-gray", text: "folder_open"}))
-          .append($("<a/>", {href: "#", text: name}))));
-      });
 
-      folderDropdown.append(dd_container);
+    //Get Dynamically FROM LEFT PANE
+
+    // var sidePanelFolderNames = [];
+    // $("#side_folders > li > a").each(function(item){
+    //   console.log(item);
+    // });
+
+
+
+    var folders = ["Deadpool", "Superman", "Batman", "Prowler", "Thor"];
+    folders.map(function(folderName){
+      folderDropdownMountPoint
+        .append($("<li/>")
+        .append($("<span/>")
+        .append($("<i/>", {class: "material-icons md-size md-gray", text: "folder_open"}))
+        .append($("<a/>", {href: "#", text: folderName}))));
+    });
   });
 
   function makePost(title, source, author, preview, date, read){
@@ -110,13 +120,12 @@ $(document).ready(function(){
             .append($("<i/>", {class: "material-icons md-size md-gray", text: "folder_open", title: "Move"}))
             .append($("<i/>", {class: "material-icons md-size md-gray", text: "archive", title: "Archive"}))
             .append($("<i/>", {class: "material-icons md-size md-gray", text: "delete_forever", title: "Delete Forever"}))
-            .append($("<i/>", {class: "material-icons md-size md-gray", text: "share", title: "Share..."}))))
-        );
+            .append($("<i/>", {class: "material-icons md-size md-gray", text: "share", title: "Share..."})))
+          .append($("<div/>", {class: "folder_dropdown"})
+            .append($("<ul/>")
+            .append($("<li/>", {text: "MOVE"})))))
+    );
   }
-
-
-
-
 });
 
 
@@ -140,10 +149,21 @@ $("#side_footer_dropdown_button").click(function(event){
   $("#side_footer > .dropdown").css({display: "block"});
 });
 
-//RESET DOM
+
+//Iterate Through all of them and then find the one that's open.
+//Then Append the usual Logic/LIsteningers
+//OR
+//ON CLICK, SET A PROPERTY TO DENOTE IT's SELECTED.
+// $(".folder_dropdown").click(function(event){
+//   event.preventDefault();
+//   event.stopPropagation();
+// });
+
+//RESET DOM STATE AFTER CLICKING
 $(document).click(function(){
   $("#username > .dropdown").css({display: "none"});
   $("#side_footer .dropdown").css({display: "none"});
+
 });
 
 
