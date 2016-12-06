@@ -3,7 +3,7 @@ html{
   height: 100%;
   border: 0;
   margin: 0;
-  background-color: pink;
+  font-family: Roboto, sans-serif;
 }
 
 body{
@@ -13,22 +13,98 @@ body{
   margin: 0;
 }
 #main_component{
+  box-sizing: border-box;
   height: 80%;
   width: 100%;
-  background-image: url("../imgs/yose4k.jpg");
-  background-size: cover;
-  filter: brightness(50%);
-}
-#footer{
-  height: 20%;
-  width: 80%;
-  background-color: rgb(16, 6, 134);
+  padding-top: 5%;
+  padding-bottom: 5%;
   padding-left: 10%;
   padding-right: 10%;
+  background-image: url("../../../dist/yose4k.min.jpg");
+  background-size: cover;
+  /*filter: brightness(80%);*/
+}
+
+.accent_colour{
+  color: orange;
+}
+
+.maintext{
+  color: white;
+  font-size: 100%;
+}
+
+.subtext{
+  color: #8c8c85;
+  font-size: 30%;
+}
+
+#main_component_name{
+  font-weight: bold;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+#main_component_text{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 92px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#main_component_blocks{
+
+}
+
+.square{
+  position: relative;
+  width: 10%;
+  background-color: orange;
+  display: inline-block;
+  text-align: left;
+}
+
+.square:after{
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.square_content{
+  position: absolute;
+  padding-left: 10%;
+  padding-top: 80%;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+}
+
+#footer{
+  box-sizing: border-box;
+  height: 20%;
+  width: 100%;
+  background-color: rgb(31,32,54);
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  display: table;
+  color: white;
 }
 #footer #footer_snippet{
-  display: table-cell;  
-}
-#footer #footer_form{
   display: table-cell;
+  font-size: 26px;
+}
+#footer_form{
+  display: table-cell;
+}
+#footer_form .email_text_input{
+  border: 0;
+  line-height: px;
+
+}
+#footer_form .email_button{
+  border: 0;
+  background-color: orange;
+  color: white;
 }

@@ -3,38 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <title>EMAIL LANDING PAGE</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel = "stylesheet" href = "index.css" />
   </head>
   <body>
     <div id = "main_component">
-      <div class = "main_component_name">Robert Yuen</div>
-      <div class = "main_component_text">a web developer in vancouver</div>
-      <div class = "main_component_subtext">
-        here's some links
+      <div id = "main_component_name" class = "accent_colour">Robert Yuen</div>
+
+      <div id = "main_component_text">
+        <div class = "maintext">a web developer in vancouver</div>
+        <div class = "subtext">here are some links.</div>
       </div>
+
       <div class = "main_component_blocks">
-        <ul>
-          <li>
-            linkedin
-          </li>
-          <li>
-            instapaper clone
-          </li>
-          <li>
-            medium clone
-          </li>
-        </ul>
+        <div class = "square"><div class = "square_content">LinkedIn</div></div>
+        <div class = "square"><div class = "square_content">Github</div></div>
+        <div class = "square"><div class = "square_content">Medium Clone</div></div>
+        <div class = "square"><div class = "square_content">Instapaper</div></div>
       </div>
+
     </div>
+
     <div id = "footer">
       <div id = "footer_snippet">
-        Get an Email to be notified of any changes.
+        <div class = "maintext">Get an Email to be notified of any changes.</div>
+        <div class = "subtext">Instant gratification.</div>
       </div>
+
       <div id = "footer_form">
         <form method="POST" action = "/">
-          <label>Email</label>
-          <input type = "email" />
-          <input type = "submit" placeholder="STAY INFORMED" />
+          <label class = "accent_colour">Email</label>
+          <input class = "email_text_input" type = "email" />
+          <input class = "email_button" type = "submit" placeholder="STAY INFORMED" />
         </form>
       </div>
     </div>
