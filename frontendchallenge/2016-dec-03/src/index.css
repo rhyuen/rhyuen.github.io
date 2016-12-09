@@ -12,6 +12,8 @@ body{
   border: 0;
   margin: 0;
 }
+
+
 #main_component{
   box-sizing: border-box;
   height: 80%;
@@ -22,27 +24,28 @@ body{
   padding-right: 10%;
   background-image: url("../../../dist/yose4k.min.jpg");
   background-size: cover;
-  /*filter: brightness(80%);*/
+  content: ".";
+  position: relative;
 }
 
-.accent_colour{
-  color: orange;
-}
-
-.maintext{
-  color: white;
-  font-size: 100%;
-}
-
-.subtext{
-  color: #8c8c85;
-  font-size: 30%;
+#main_component:before{
+  content: "";
+  display: block;
+  position:absolute;
+  background: rgba(0,0,0,0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 #main_component_name{
   font-weight: bold;
   font-size: 26px;
   text-transform: uppercase;
+  position: relative;
+  z-index: 3;
 }
 
 #main_component_text{
@@ -54,13 +57,44 @@ body{
 }
 
 #main_component_blocks{
-
+  position: relative;
+  z-index: 3;
 }
 
+.accent_colour{
+  color: orange;
+}
+
+.maintext{
+  position: relative;
+  color: white;
+  font-size: 100%;
+  z-index: 3;
+}
+
+
+.subtext{
+  position: relative;
+  color: #8c8c85;
+  font-size: 30%;
+  z-index: 3;
+}
+
+#main_compontent_text .maintext{
+  content: "a web developer in vancouver";
+  z-index: 4;
+}
+#main_content_text .subtext{
+  content: "here are some links.";
+  z-index: 4;
+}
+
+
+
 .square{
+  background-color: orange;
   position: relative;
   width: 10%;
-  background-color: orange;
   display: inline-block;
   text-align: left;
 }
@@ -78,16 +112,17 @@ body{
   height: 100%;
   font-size: 1em;
 }
+.square_content a{
+  text-decoration: none;
+  color: black;
+}
 
 #footer{
   box-sizing: border-box;
   height: 20%;
   width: 100%;
   background-color: rgb(31,32,54);
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 4%;
-  padding-bottom: 4%;
+  padding: 4% 10%;
   display: table;
   color: white;
 }
