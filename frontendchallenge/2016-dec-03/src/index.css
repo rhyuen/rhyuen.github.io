@@ -54,6 +54,12 @@ body{
   font-size: 92px;
   color: white;
   text-transform: uppercase;
+  z-index: 3;
+  position: relative;
+}
+#main_component_text #component_subtext{
+  font-size: 30px;
+  color: #8c8c85;
 }
 
 #main_component_blocks{
@@ -76,16 +82,14 @@ body{
 .subtext{
   position: relative;
   color: #8c8c85;
-  font-size: 30%;
+  font-size: 90%;
   z-index: 3;
 }
 
 #main_compontent_text .maintext{
-  content: "a web developer in vancouver";
   z-index: 4;
 }
 #main_content_text .subtext{
-  content: "here are some links.";
   z-index: 4;
 }
 
@@ -129,17 +133,22 @@ body{
 #footer #footer_snippet{
   display: table-cell;
   font-size: 26px;
+  height: 20%;
 }
 #footer_form{
   display: table-cell;
+  vertical-align: top;
 }
-#footer_form .email_text_input{
-  border: 0;
-  line-height: px;
 
+#footer_form input[type="email"]{
+  border: 0;
+  margin-right: 0;
+  padding: 2% 4%;
 }
-#footer_form .email_button{
+#footer_form input[type="submit"]{
   border: 0;
   background-color: orange;
   color: white;
+  margin-left: 0;
+  padding: 2% 4%;
 }
