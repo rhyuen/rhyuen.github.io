@@ -1,0 +1,81 @@
+body{margin: 0; border: 0; width: 100%; height: 100%; color: white; font-size: 16px; font-family: "SEGOE UI";}
+a{text-decoration: none; color: white;}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(177, 134, 226);
+  padding: 1% 2%;
+}
+.header__nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+.header__nav li{
+  list-style: none;
+  color: white;
+  background-color: rgb(105, 25, 208);
+}
+
+.section{
+  height: 50vh;
+  background-color: rgb(197, 106, 219);
+  padding: 5% 25%;
+  display: flex;
+  flex-direction: column;
+}
+.section__header{
+  background-color: black;
+  color: yellow;
+  display: flex;
+}
+.section__content{
+  display: flex;
+  align-content: stretch;
+  height: 100%;
+}
+.section__content__component{
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100%;
+}
+footer{
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5% 25%;
+}
+
+.footer__column--header{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.footer__column li{
+  list-style: none;
+}
+
+.main{
+  background-color: white;
+  color: black;
+  align-items: center;
+  justify-content: center;
+}
+.about{background-color: rgb(204, 108, 91);}
+.skills{background-color: rgb(219, 212, 38);}
+.projects{background-color: rgb(47, 104, 214);}
+.contact{background-color: rgba(128, 171, 68, 0.95);}
+
+/*@media(max-width: 1000px){
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}*/
