@@ -7,28 +7,29 @@
   <body>
     <header>
       <div class = "header__logo">
-        <a href = "/">LOGO</a>
+        <a id = "logo" href = "logo"></a><a href = "/">FirstName LastName</a>
       </div>
       <div class = "header__nav">
         <ul>
-          <li><a href = "/">ABOUT</a></li>
-          <li><a href = "/">SKILLS</a></li>
-          <li><a href = "/">PROJECTS</a></li>
-          <li><a href= "/">CONTACT</a></li>
+          <li><a href = "#about">ABOUT</a></li>
+          <li><a href = "#skills">SKILLS</a></li>
+          <li><a href = "#projects">PROJECTS</a></li>
+          <li><a href= "#contact">CONTACT</a></li>
         </ul>
       </div>
     </header>
     <section class = "section main">
-      <div>
+
         FirstName LastName
-      </div>
-      <div>
-        Find out more below.
-      </div>
+          <div class = "section__content__component__button">
+            <a href = "#about">Find out more below.</a>
+          </div>
+
+
     </section>
     <section class = "section about">
       <div class = "section__header">
-        WHOAMI?
+        <a id = "about" href = "about"></a>WHOAMI?
       </div>
       <div class = "section__content">
         <div class = "section__content__component">
@@ -44,7 +45,7 @@
     </section>
     <section class = "section skills">
       <div class = "section__header">
-        What can I do?
+        <a href = "skills" id = "skills"></a>What can I do?
       </div>
       <div class = "section__content">
         <div class = "section__content__component">
@@ -60,7 +61,7 @@
     </section>
     <section class = "section projects">
       <div class = "section__header">
-        What have I done?
+        <a id = "projects" href = "projects"></a> What have I done?
       </div>
       <div class = "section__content">
         <div class = "section__content__component">
@@ -76,17 +77,18 @@
     </section>
     <section class = "section contact">
       <div class = "section__header">
-        Getting in touch.
+        <a id = "contact" href = "contact"></a>Getting in touch.
       </div>
       <div class = "section__content">
         <div class = "section__content__component">
-          Ready to Contact Me?
-
-          PHONE: 555 555 5555
-          EMAIL: email@email.com
-          SKYPE: skype@skype.com
-          TWITTER: @ryuen1
-          LINKEDIN: linkedin@linkedin
+          <ul>
+            <li class = "section__content__component__column--header">Ready to Contact Me?</li>
+            <li>PHONE: 555 555 5555</li>
+            <li>EMAIL: email@email.com</li>
+            <li>SKYPE: skype@skype.com</li>
+            <li>TWITTER: @ryuen1</li>
+            <li>LINKEDIN: linkedin@linkedin</li>
+          </ul>
         </div>
         <div class = "section__content__component">
           PICTURE
@@ -99,30 +101,35 @@
         <ul>
           <li class = "footer__column--header">Contact</li>
           <li>555 555 5555</li>
-          <li>mail@mail.com</li>
-          <li>@twitter</li>
-          <li>AnotherThing</li>
+          <li><a href = "">mail@mail.com</a></li>
+          <li><a href = "">@twitter</a></li>
+          <li><a href = "">AnotherThing</a></li>
         </ul>
       </div>
       <div class = "footer__column">
         <ul>
           <li class = "footer__column--header">Projects</li>
-          <li>Project 1</li>
-          <li>Project 2</li>
-          <li>Project 3</li>
-          <li>Project 4</li>
+          <li><a href = "">Project 1</a></li>
+          <li><a href = "">Project 2</a></li>
+          <li><a href = "">Project 3</a></li>
+          <li><a href = "">Project 4</a></li>
         </ul>
       </div>
       <div class = "footer__column">
         <ul>
           <li class="footer__column--header">Links</li>
-          <li>Twitter</li>
-          <li>Github</li>
-          <li>LinkedIn</li>
-          <li>Docker Hub</li>
+          <li><a href = "">Twitter</a></li>
+          <li><a href = "">Github</a></li>
+          <li><a href = "">LinkedIn</a></li>
+          <li><a href = "">Docker Hub</a></li>
         </ul>
       </div>
     </footer>
+    <div class = "top">
+      <div class = "top__content"></div>
+      <span><a href ="#logo"> &#8679;</a></span>
+      <div></div>
+    </div>
     <script type = "text/javascript" src = "./index.js"></script>
   </body>
 </html>
