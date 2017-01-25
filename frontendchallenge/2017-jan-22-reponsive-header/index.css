@@ -18,22 +18,22 @@ a{
   position: fixed;
   bottom: 5%;
   right: 5%;
-  width: 5%;
+  width: 2%;
   overflow: hidden;
+  border-radius: 5px;
   background-color: rgb(105, 25, 208);
 }
 .top:before{
-  content: ""
+  content: "";
   display: block;
-  padding-top: 10%;
+  padding-top: 100%;
+
 }
 .top__content{
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  color: white;
+  top: 20%;
+  right: 40%;
+
 }
 .top-content div{
   display: table;
@@ -44,7 +44,6 @@ a{
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  color: white;
 }
 .top span a{
   color: white;
@@ -119,8 +118,10 @@ header{
 }
 .section__content{
   display: flex;
-  align-content: stretch;
+  /*align-content: stretch;*/
   height: 100%;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
 .section__content__component{
@@ -128,10 +129,30 @@ header{
   flex-direction: column;
   background-color: gray;
   align-items: stretch;
-  align-content: stretch;
   justify-content: center;
   height: 100%;
   flex-grow: 1;
+}
+
+.section__content__component__header{
+  background-color: pink;
+  font-weight: bold;
+  display: flex;
+  height: 33%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.section__content__component__content{
+  background-color: violet;
+  height: 67%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .section__content__component__column--header{
@@ -180,9 +201,9 @@ footer{
 
 .about{background-color: rgb(204, 108, 91);}
 .skills{
-  background-color: rgb(219, 212, 38);
+  background-color: rgb(177, 134, 226);
 }
-.projects{background-color: rgb(47, 104, 214);}
+.projects{background-color: rgb(246, 114, 91);}
 .contact{background-color: rgba(128, 171, 68, 0.95);}
 
 /*@media(max-width: 1000px){
